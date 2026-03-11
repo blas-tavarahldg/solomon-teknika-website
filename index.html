@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLOMON TEKNIKA — Venture Studio | Build. Lift. Accelerate. Scale.</title>
+    <meta name="description" content="SOLOMON TEKNIKA is a venture studio that builds, grows, and sells digital marketplace apps. 6 apps across diverse verticals. Concept to live product in 7 days.">
+    <meta property="og:title" content="SOLOMON TEKNIKA — Venture Studio">
+    <meta property="og:description" content="We engineer the future. One digital empire at a time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solomonteknika.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            /* Light zone colors */
+            --white: #FFFFFF;
+            --off-white: #FAFBFC;
+            --light-gray: #F1F3F5;
+            --warm-cream: #F8F6F3;
+            /* Dark zone colors */
+            --deep-black: #06060C;
+            --rich-black: #0C0C18;
+            --card-bg: #111122;
+            --card-border: rgba(255,255,255,0.06);
+            /* Brand from logo */
+            --navy: #1B2A4A;
+            --navy-deep: #0F1B33;
+            --electric-purple: #8B5CF6;
+            --vivid-magenta: #EC4899;
+            --neon-orange: #F97316;
+            --hot-red: #EF4444;
+            --gold: #F59E0B;
+            --gold-light: #FCD34D;
+            --emerald: #10B981;
+            --cyan: #06B6D4;
+            /* Text */
+            --text-dark: #1B2A4A;
+            --text-dark-secondary: #4B5563;
+            --text-dark-muted: #9CA3AF;
+            --text-light: #E8E4DD;
+            --text-light-secondary: #9CA3AF;
+            --text-light-muted: #6B7280;
+            /* Shared */
+            --radius: 16px;
+            --radius-sm: 8px;
+            --glow-orange: 0 0 30px rgba(249,115,22,0.4), 0 0 60px rgba(249,115,22,0.15);
+            --glow-purple: 0 0 30px rgba(139,92,246,0.4), 0 0 60px rgba(139,92,246,0.15);
+            --glow-magenta: 0 0 30px rgba(236,72,153,0.4), 0 0 60px rgba(236,72,153,0.15);
+            --glow-gold: 0 0 30px rgba(245,158,11,0.3), 0 0 60px rgba(245,158,11,0.1);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, h5 { font-family: 'Jost', sans-serif; line-height: 1.15; }
+        a { text-decoration: none; color: inherit; }
+        button { cursor: pointer; font-family: inherit; border: none; background: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes neon-flicker { 0%, 100% { opacity: 1; } 92% { opacity: 1; } 93% { opacity: 0.8; } 94% { opacity: 1; } 96% { opacity: 0.9; } 97% { opacity: 1; } }
+        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(249,115,22,0.2); } 50% { box-shadow: 0 0 40px rgba(249,115,22,0.4); } }
+        .animate { opacity: 0; }
+        .animate.visible { animation: fadeInUp 0.6s ease forwards; }
+
+        /* Gradient utilities */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--neon-orange), var(--vivid-magenta), var(--electric-purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .gradient-text-gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--neon-orange));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        /* Buttons — light context */
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, var(--neon-orange), #E8611A);
+            color: var(--white); padding: 16px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(249,115,22,0.25);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--glow-orange); }
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: 8px;
+            border: 2px solid var(--navy); color: var(--navy);
+            padding: 16px 36px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            background: var(--navy); color: var(--white);
+            box-shadow: 0 10px 30px rgba(27,42,74,0.2); transform: translateY(-3px);
+        }
+        /* Buttons — dark context */
+        .btn-primary-dark {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, var(--neon-orange), var(--vivid-magenta));
+            color: var(--white); padding: 16px 36px; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(249,115,22,0.3);
+        }
+        .btn-primary-dark:hover { transform: translateY(-3px); box-shadow: var(--glow-orange); }
+        .btn-outline-dark {
+            display: inline-flex; align-items: center; gap: 8px;
+            border: 2px solid var(--electric-purple); color: var(--electric-purple);
+            padding: 16px 36px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-outline-dark:hover {
+            background: var(--electric-purple); color: var(--white);
+            box-shadow: var(--glow-purple); transform: translateY(-3px);
+        }
+        .btn-gold {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, var(--gold), var(--neon-orange));
+            color: var(--deep-black); padding: 16px 36px; border-radius: 50px;
+            font-weight: 800; font-size: 1rem; transition: all 0.3s;
+        }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: var(--glow-gold); }
+
+        /* ===== NAVBAR (LIGHT) ===== */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 14px 0;
+            background: rgba(255,255,255,0.85); backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid rgba(27,42,74,0.08);
+            transition: all 0.3s;
+        }
+        .navbar.scrolled {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 4px 20px rgba(27,42,74,0.06);
+        }
+        .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { display: flex; align-items: center; gap: 12px; }
+        .nav-brand img { width: 44px; height: auto; object-fit: contain; }
+        .nav-brand-text { font-family: 'Jost', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--navy); letter-spacing: 0.1em; text-transform: uppercase; }
+        .nav-brand-text span { color: var(--neon-orange); }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--text-dark-secondary); transition: all 0.3s; }
+        .nav-links a:hover { color: var(--neon-orange); }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--neon-orange), var(--vivid-magenta));
+            color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 700;
+            font-size: 0.85rem; transition: all 0.3s;
+            box-shadow: 0 2px 12px rgba(249,115,22,0.2);
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--glow-orange); }
+        .mobile-menu-btn { display: none; color: var(--navy); font-size: 1.5rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.98); flex-direction: column; padding: 24px; border-bottom: 1px solid rgba(27,42,74,0.08); backdrop-filter: blur(24px); }
+            .nav-links.open { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+
+        /* ===== HERO (LIGHT) ===== */
+        .hero {
+            padding: 140px 0 100px; position: relative; overflow: hidden;
+            background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 60%, var(--light-gray) 100%);
+        }
+        .hero::after {
+            content: ''; position: absolute; top: -200px; right: -150px; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
+        .hero-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+        .hero-logo { margin-bottom: 32px; }
+        .hero-logo img { width: 80px; height: 80px; filter: drop-shadow(0 4px 12px rgba(27,42,74,0.1)); }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2);
+            padding: 8px 20px; border-radius: 50px; font-size: 0.78rem; font-weight: 700;
+            color: var(--electric-purple); margin-bottom: 28px; letter-spacing: 0.1em; text-transform: uppercase;
+        }
+        .hero-badge .dot { width: 8px; height: 8px; background: var(--electric-purple); border-radius: 50%; animation: neon-flicker 4s infinite; box-shadow: 0 0 8px rgba(139,92,246,0.4); }
+        .hero h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 900; margin-bottom: 24px; letter-spacing: -0.03em; color: var(--navy); }
+        .hero p { font-size: 1.15rem; color: var(--text-dark-secondary); max-width: 560px; margin-bottom: 40px; line-height: 1.8; }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-visual {
+            display: flex; justify-content: center; align-items: center;
+            position: relative;
+        }
+        .hero-visual img {
+            width: 320px; height: auto; object-fit: contain;
+            animation: float 5s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(27,42,74,0.12));
+        }
+        .hero-visual::before {
+            content: ''; position: absolute; width: 360px; height: 360px;
+            background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, rgba(249,115,22,0.04) 50%, transparent 70%);
+            border-radius: 50%;
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 120px 0 60px; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-visual { order: -1; }
+            .hero-visual img { width: 200px; height: auto; }
+            .hero-btns { justify-content: center; }
+        }
+
+        /* ===== METRICS STRIP (LIGHT) ===== */
+        .hero-metrics {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+            max-width: 100%; margin-top: 80px; padding-top: 60px;
+            border-top: 1px solid rgba(27,42,74,0.08);
+        }
+        .metric { padding-left: 20px; border-left: 3px solid; border-image: linear-gradient(to bottom, var(--neon-orange), var(--vivid-magenta)) 1; }
+        .metric-value { font-family: 'Jost', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--navy); }
+        .metric-value .accent { color: var(--neon-orange); }
+        .metric-label { font-size: 0.82rem; color: var(--text-dark-muted); margin-top: 4px; letter-spacing: 0.03em; }
+        @media (max-width: 768px) { .hero-metrics { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+
+        /* ===== TRANSITION: LIGHT → DARK ===== */
+        .transition-to-dark {
+            height: 120px;
+            background: linear-gradient(180deg, var(--light-gray) 0%, var(--navy-deep) 100%);
+        }
+
+        /* ===== PARENT BAR (DARK) ===== */
+        .parent-bar {
+            padding: 28px 0; text-align: center;
+            background: var(--navy-deep);
+            border-bottom: 1px solid rgba(249,115,22,0.08);
+        }
+        .parent-bar p { font-size: 0.82rem; color: var(--text-light-muted); letter-spacing: 0.06em; }
+        .parent-bar strong { color: var(--gold); }
+        .parent-bar .tagline { color: var(--gold-light); font-weight: 600; font-size: 0.85rem; margin-top: 6px; font-style: italic; }
+
+        /* ===== DARK SECTIONS ===== */
+        .section-dark {
+            padding: 120px 0;
+            background: var(--deep-black);
+            color: var(--text-light);
+        }
+        .section-dark h2, .section-dark h3, .section-dark h4 { color: var(--white); }
+        .section-alt {
+            padding: 120px 0;
+            background: var(--rich-black);
+            color: var(--text-light);
+        }
+        .section-alt h2, .section-alt h3, .section-alt h4 { color: var(--white); }
+
+        .section-label {
+            display: inline-block; font-size: 0.72rem; font-weight: 700;
+            color: var(--electric-purple); letter-spacing: 0.18em; text-transform: uppercase;
+            margin-bottom: 16px; text-shadow: 0 0 20px rgba(139,92,246,0.3);
+        }
+        .section-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .section-subtitle { font-size: 1.05rem; color: var(--text-light-secondary); max-width: 580px; margin-bottom: 64px; }
+
+        /* ===== PORTFOLIO ===== */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; }
+        .app-card {
+            background: var(--card-bg); border-radius: var(--radius); padding: 36px;
+            position: relative; overflow: hidden; transition: all 0.4s;
+            border: 1px solid var(--card-border);
+        }
+        .app-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--electric-purple), var(--vivid-magenta), var(--neon-orange));
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .app-card:hover { transform: translateY(-6px); border-color: rgba(139,92,246,0.3); box-shadow: 0 20px 60px rgba(139,92,246,0.1), 0 0 40px rgba(249,115,22,0.05); }
+        .app-card:hover::before { opacity: 1; }
+        .app-status {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 5px 14px; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px;
+        }
+        .status-live { background: rgba(16,185,129,0.12); color: var(--emerald); border: 1px solid rgba(16,185,129,0.3); }
+        .status-live .dot { width: 6px; height: 6px; background: var(--emerald); border-radius: 50%; box-shadow: 0 0 8px var(--emerald); animation: neon-flicker 3s infinite; }
+        .status-building { background: rgba(249,115,22,0.1); color: var(--neon-orange); border: 1px solid rgba(249,115,22,0.3); }
+        .app-card h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; letter-spacing: 0.03em; }
+        .app-card .tagline { font-size: 0.88rem; color: var(--gold); font-weight: 500; margin-bottom: 14px; }
+        .app-card .market { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--vivid-magenta); margin-bottom: 14px; }
+        .app-card .desc { font-size: 0.88rem; color: var(--text-light-secondary); margin-bottom: 20px; line-height: 1.7; }
+        .app-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+        .app-meta-item {
+            font-size: 0.75rem; color: var(--text-light-muted);
+            padding: 4px 12px; background: rgba(139,92,246,0.08);
+            border-radius: 50px; border: 1px solid rgba(139,92,246,0.15);
+            transition: all 0.3s;
+        }
+        .app-card:hover .app-meta-item { border-color: rgba(139,92,246,0.3); color: var(--electric-purple); }
+
+        /* ===== BLAS X FRAMEWORK ===== */
+        .blas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 64px; }
+        .blas-phase {
+            background: var(--card-bg); padding: 40px 28px; position: relative;
+            border-top: 3px solid rgba(255,255,255,0.03); transition: all 0.4s;
+        }
+        .blas-phase:nth-child(1):hover { border-top-color: var(--neon-orange); box-shadow: inset 0 3px 20px rgba(249,115,22,0.1); }
+        .blas-phase:nth-child(2):hover { border-top-color: var(--gold); box-shadow: inset 0 3px 20px rgba(245,158,11,0.1); }
+        .blas-phase:nth-child(3):hover { border-top-color: var(--vivid-magenta); box-shadow: inset 0 3px 20px rgba(236,72,153,0.1); }
+        .blas-phase:nth-child(4):hover { border-top-color: var(--emerald); box-shadow: inset 0 3px 20px rgba(16,185,129,0.1); }
+        .phase-letter {
+            font-family: 'Jost', sans-serif; font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 12px;
+            color: rgba(255,255,255,0.04); transition: all 0.4s;
+        }
+        .blas-phase:nth-child(1):hover .phase-letter { color: var(--neon-orange); text-shadow: 0 0 30px rgba(249,115,22,0.3); }
+        .blas-phase:nth-child(2):hover .phase-letter { color: var(--gold); text-shadow: 0 0 30px rgba(245,158,11,0.3); }
+        .blas-phase:nth-child(3):hover .phase-letter { color: var(--vivid-magenta); text-shadow: 0 0 30px rgba(236,72,153,0.3); }
+        .blas-phase:nth-child(4):hover .phase-letter { color: var(--emerald); text-shadow: 0 0 30px rgba(16,185,129,0.3); }
+        .blas-phase h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .phase-weeks { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--electric-purple); margin-bottom: 12px; letter-spacing: 0.05em; }
+        .blas-phase p { font-size: 0.85rem; color: var(--text-light-secondary); line-height: 1.7; }
+        @media (max-width: 768px) { .blas-grid { grid-template-columns: 1fr; } }
+
+        /* ===== METRICS BAR ===== */
+        .metrics-bar {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(236,72,153,0.05), rgba(249,115,22,0.03)), var(--rich-black);
+            border-top: 1px solid rgba(139,92,246,0.1);
+            border-bottom: 1px solid rgba(249,115,22,0.1);
+        }
+        .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; text-align: center; }
+        .metrics-grid .big-number { font-family: 'Jost', sans-serif; font-size: 4rem; font-weight: 900; }
+        .metrics-grid .big-number .num { color: var(--white); }
+        .metrics-grid .big-number .unit { color: var(--neon-orange); text-shadow: 0 0 20px rgba(249,115,22,0.3); }
+        .metrics-grid .metric-desc { font-size: 0.88rem; color: var(--text-light-secondary); margin-top: 8px; }
+        @media (max-width: 768px) { .metrics-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+        /* ===== FOUNDER ===== */
+        .founder-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
+        .founder-visual {
+            background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(249,115,22,0.05));
+            border: 1px solid rgba(139,92,246,0.15); border-radius: var(--radius); padding: 48px; text-align: center;
+        }
+        .founder-initials {
+            font-family: 'Jost', sans-serif; font-size: 5rem; font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-orange), var(--vivid-magenta), var(--electric-purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px;
+        }
+        .founder-visual h4 { font-size: 1.1rem; margin-bottom: 4px; }
+        .founder-visual .role { font-size: 0.85rem; color: var(--text-light-muted); }
+        .founder-creds { display: flex; gap: 8px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+        .cred-badge {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 500;
+            padding: 4px 10px; border-radius: 4px;
+            background: rgba(139,92,246,0.1); color: var(--electric-purple);
+            border: 1px solid rgba(139,92,246,0.2);
+        }
+        .founder-tagline { margin-top: 20px; font-size: 0.88rem; color: var(--gold); font-weight: 600; font-style: italic; }
+        .founder-bio h3 { font-size: 2rem; margin-bottom: 24px; }
+        .founder-bio p { margin-bottom: 16px; color: var(--text-light-secondary); line-height: 1.8; }
+        .career-list { margin-top: 24px; }
+        .career-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .career-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .career-item:nth-child(1) .career-dot { background: var(--neon-orange); box-shadow: 0 0 10px rgba(249,115,22,0.4); }
+        .career-item:nth-child(2) .career-dot { background: var(--vivid-magenta); box-shadow: 0 0 10px rgba(236,72,153,0.4); }
+        .career-item:nth-child(3) .career-dot { background: var(--electric-purple); box-shadow: 0 0 10px rgba(139,92,246,0.4); }
+        .career-item:nth-child(4) .career-dot { background: var(--gold); box-shadow: 0 0 10px rgba(245,158,11,0.4); }
+        .career-item span { font-size: 0.92rem; color: var(--text-light); }
+        @media (max-width: 768px) { .founder-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+        /* ===== VALUES ===== */
+        .values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
+        .value-card {
+            background: var(--card-bg); padding: 36px 20px; text-align: center;
+            border-top: 2px solid transparent; transition: all 0.4s;
+        }
+        .value-card:nth-child(1):hover { border-top-color: var(--neon-orange); }
+        .value-card:nth-child(2):hover { border-top-color: var(--hot-red); }
+        .value-card:nth-child(3):hover { border-top-color: var(--gold); }
+        .value-card:nth-child(4):hover { border-top-color: var(--vivid-magenta); }
+        .value-card:nth-child(5):hover { border-top-color: var(--electric-purple); }
+        .value-letter { font-family: 'Jost', sans-serif; font-size: 2.8rem; font-weight: 900; margin-bottom: 8px; }
+        .value-card:nth-child(1) .value-letter { color: var(--neon-orange); }
+        .value-card:nth-child(2) .value-letter { color: var(--hot-red); }
+        .value-card:nth-child(3) .value-letter { color: var(--gold); }
+        .value-card:nth-child(4) .value-letter { color: var(--vivid-magenta); }
+        .value-card:nth-child(5) .value-letter { color: var(--electric-purple); }
+        .value-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+        .value-card p { font-size: 0.78rem; color: var(--text-light-muted); }
+        @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr 1fr; } }
+
+        /* ===== ACQUIRERS ===== */
+        .acquirer-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+        .acq-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius); padding: 32px; transition: all 0.3s;
+        }
+        .acq-card:hover { border-color: rgba(245,158,11,0.3); box-shadow: 0 10px 40px rgba(245,158,11,0.05); transform: translateY(-4px); }
+        .acq-icon { font-size: 2.2rem; margin-bottom: 16px; filter: saturate(1.5); }
+        .acq-card h4 { font-size: 1.05rem; margin-bottom: 8px; color: var(--white); }
+        .acq-card p { font-size: 0.88rem; color: var(--text-light-secondary); line-height: 1.7; }
+        .marketplace-logos { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 60px; }
+        .marketplace-logos span {
+            font-family: 'Jost', sans-serif; font-weight: 700; font-size: 1.1rem;
+            color: var(--gold); letter-spacing: 0.02em;
+            text-shadow: 0 0 15px rgba(245,158,11,0.2);
+        }
+
+        /* ===== TRANSITION: DARK → LIGHT (for contact) ===== */
+        .transition-to-light {
+            height: 120px;
+            background: linear-gradient(180deg, var(--deep-black) 0%, var(--white) 100%);
+        }
+
+        /* ===== CONTACT (LIGHT) ===== */
+        .contact-section {
+            padding: 100px 0; background: var(--white); color: var(--text-dark);
+        }
+        .contact-section h2, .contact-section h3 { color: var(--navy); }
+        .contact-section .section-label { text-shadow: none; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-info h3 { font-size: 2.2rem; margin-bottom: 16px; }
+        .contact-info p { color: var(--text-dark-secondary); margin-bottom: 24px; }
+        .contact-link {
+            display: flex; align-items: center; gap: 12px;
+            padding: 16px 0; border-bottom: 1px solid rgba(27,42,74,0.06);
+            font-size: 0.95rem; color: var(--text-dark); transition: all 0.3s;
+        }
+        .contact-link:hover { color: var(--neon-orange); }
+        .contact-link .icon { font-size: 1.2rem; }
+        .contact-form { display: flex; flex-direction: column; gap: 16px; }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            background: var(--off-white); border: 1px solid rgba(27,42,74,0.1);
+            border-radius: var(--radius-sm); padding: 14px 18px;
+            font-family: inherit; font-size: 0.95rem; color: var(--navy); transition: all 0.3s;
+        }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            outline: none; border-color: var(--neon-orange);
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+        }
+        .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--text-dark-muted); }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+        /* ===== FOOTER (DARK) ===== */
+        .footer {
+            padding: 48px 0 32px; background: var(--navy-deep);
+            border-top: 1px solid rgba(249,115,22,0.08);
+        }
+        .footer-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; gap: 24px; }
+        .footer-brand { display: flex; align-items: center; gap: 14px; }
+        .footer-brand img { width: 48px; height: auto; object-fit: contain; }
+        .footer-brand-text .name { font-family: 'Jost', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase; }
+        .footer-brand-text .name span { color: var(--neon-orange); }
+        .footer-brand-text .sub { font-size: 0.7rem; color: var(--text-light-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 0.85rem; color: var(--text-light-secondary); transition: color 0.3s; }
+        .footer-links a:hover { color: var(--neon-orange); }
+        .footer-legal { font-size: 0.72rem; color: var(--text-light-muted); line-height: 1.8; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 24px; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR (Light) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-brand">
+                <img src="Visuals/Copilot_20260311_113817 Logo only.png" alt="SOLOMON TEKNIKA">
+                <div class="nav-brand-text">SOLOMON <span>TEKNIKA</span></div>
+            </a>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+            <div class="nav-links">
+                <a href="#portfolio">Portfolio</a>
+                <a href="#model">The Model</a>
+                <a href="#founder">Founder</a>
+                <a href="#acquirers">For Acquirers</a>
+                <a href="#contact" class="nav-cta">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO (Light — logo looks its best) -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <div class="hero-badge"><span class="dot"></span> Venture Studio</div>
+                    <h1>We Engineer the Future.<br><span class="gradient-text">One Digital Empire at a Time.</span></h1>
+                    <p>SOLOMON TEKNIKA builds, grows, and sells digital marketplace apps at proprietary velocity. From concept to live product in days. Every app is inventory. Every exit is proof.</p>
+                    <div class="hero-btns">
+                        <a href="#portfolio" class="btn-primary">View Portfolio &#8594;</a>
+                        <a href="#contact" class="btn-outline">Talk to Us</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="Visuals/Copilot_20260311_112201 HG Logo transparent bg.png" alt="SOLOMON TEKNIKA — Innovations | Technologies | Solutions">
+                </div>
+            </div>
+            <div class="hero-metrics">
+                <div class="metric"><div class="metric-value"><span class="accent">7</span> days</div><div class="metric-label">Concept to live product</div></div>
+                <div class="metric"><div class="metric-value"><span class="accent">~$3K</span></div><div class="metric-label">Build cost per app</div></div>
+                <div class="metric"><div class="metric-value"><span class="accent">6</span> apps</div><div class="metric-label">In portfolio</div></div>
+                <div class="metric"><div class="metric-value"><span class="accent">2.5&#8211;4x</span></div><div class="metric-label">Target exit multiple</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSITION: Light → Dark -->
+    <div class="transition-to-dark"></div>
+
+    <!-- PARENT BAR (Dark) -->
+    <div class="parent-bar">
+        <div class="container">
+            <p>A portfolio company of <strong>TAVARA Holdings</strong></p>
+            <p class="tagline">"Shaping Legacies. Scaling Futures. Changing Lives. | Building from Nothing. Owning Everything."</p>
+        </div>
+    </div>
+
+    <!-- PORTFOLIO (Dark) -->
+    <section class="section-dark" id="portfolio">
+        <div class="container">
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title">The <span class="gradient-text-gold">Inventory</span></h2>
+            <p class="section-subtitle">Six marketplace apps across diverse verticals. Each built to generate real revenue and exit at premium multiples.</p>
+            <div class="portfolio-grid">
+                <div class="app-card">
+                    <div class="app-status status-live"><span class="dot"></span> LIVE</div>
+                    <h3>SERBISUYO</h3>
+                    <div class="tagline">Home Services Marketplace</div>
+                    <div class="market">TAM: $893B by 2032 &middot; 73% undigitized</div>
+                    <p class="desc">Connects homeowners with vetted service providers. Unique hybrid pricing &#8212; both fixed price and competitive bidding. 64 services across 11 categories.</p>
+                    <div class="app-meta"><span class="app-meta-item">serbisuyo.com</span><span class="app-meta-item">Hybrid Pricing</span><span class="app-meta-item">Transaction-Based</span></div>
+                </div>
+                <div class="app-card">
+                    <div class="app-status status-building">IN DEVELOPMENT</div>
+                    <h3>PALO FORE</h3>
+                    <div class="tagline">Golf Lifestyle Ecosystem</div>
+                    <div class="market">Exit priority: #1 &middot; Highest niche premium</div>
+                    <p class="desc">All-in-one golf platform &#8212; coach marketplace, course booking, garment retail, and club share trading. The only all-in-one golf marketplace globally.</p>
+                    <div class="app-meta"><span class="app-meta-item">4-in-1 Platform</span><span class="app-meta-item">Fastest to Exit</span><span class="app-meta-item">Niche Premium</span></div>
+                </div>
+                <div class="app-card">
+                    <div class="app-status status-building">IN DEVELOPMENT</div>
+                    <h3>PAMEALYA PLATE</h3>
+                    <div class="tagline">Home-Cooked Meal Subscriptions</div>
+                    <div class="market">Subscription marketplace model</div>
+                    <p class="desc">Pre-ordered weekly home-cooked meal delivery. Subscription marketplace connecting home cooks with families who want real food delivered fresh.</p>
+                    <div class="app-meta"><span class="app-meta-item">Subscription</span><span class="app-meta-item">Meal Delivery</span><span class="app-meta-item">Recurring Revenue</span></div>
+                </div>
+                <div class="app-card">
+                    <div class="app-status status-building">IN DEVELOPMENT</div>
+                    <h3>PALITADA</h3>
+                    <div class="tagline">Construction &amp; Renovation Marketplace</div>
+                    <div class="market">palitada.com &middot; Home improvement vertical</div>
+                    <p class="desc">Connects homeowners with trusted, verifiable contractors, architects, interior designers, and other professionals for construction projects, renovations, and remodeling.</p>
+                    <div class="app-meta"><span class="app-meta-item">palitada.com</span><span class="app-meta-item">Verified Pros</span><span class="app-meta-item">Construction</span></div>
+                </div>
+                <div class="app-card">
+                    <div class="app-status status-building">IN DEVELOPMENT</div>
+                    <h3>ROLETA</h3>
+                    <div class="tagline">Raffles &amp; Rewards Platform</div>
+                    <div class="market">Engagement-based monetization</div>
+                    <p class="desc">Marketplace for raffles, ticket-based engagement, and rewards. Structured as free-entry or rewards-based for regulatory compliance.</p>
+                    <div class="app-meta"><span class="app-meta-item">Rewards-Based</span><span class="app-meta-item">Engagement</span><span class="app-meta-item">Compliant</span></div>
+                </div>
+                <div class="app-card">
+                    <div class="app-status status-building">IN DEVELOPMENT</div>
+                    <h3>UNIFIED LOCAL CARD</h3>
+                    <div class="tagline">Coalition Loyalty Platform</div>
+                    <div class="market">Cross-merchant rewards network</div>
+                    <p class="desc">Universal loyalty card system enabling cross-merchant rewards. One card, every local business. Network effects at scale.</p>
+                    <div class="app-meta"><span class="app-meta-item">Loyalty Network</span><span class="app-meta-item">Cross-Merchant</span><span class="app-meta-item">Network Effects</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLAS X FRAMEWORK (Alt Dark) -->
+    <section class="section-alt" id="model">
+        <div class="container">
+            <span class="section-label">The Model</span>
+            <h2 class="section-title">The <span class="gradient-text">BLAS X</span> Framework</h2>
+            <p class="section-subtitle">Proprietary 30-week build-to-exit cycle. No wasted motion. Data decides everything.</p>
+            <div class="blas-grid">
+                <div class="blas-phase"><div class="phase-letter">B</div><h4>BUILD</h4><div class="phase-weeks">WEEKS 1&#8211;3</div><p>Zero to deployed product. MVP must process real transactions from day one. Proprietary development velocity.</p></div>
+                <div class="blas-phase"><div class="phase-letter">L</div><h4>LIFT</h4><div class="phase-weeks">WEEKS 4&#8211;8</div><p>Get paying users. Supply-first strategy &#8212; onboard providers who bring their own clients. Target: 50 transactions.</p></div>
+                <div class="blas-phase"><div class="phase-letter">A</div><h4>ACCELERATE</h4><div class="phase-weeks">WEEKS 9&#8211;20</div><p>Hit $5K MRR sustained 2+ months. Retention over acquisition. Optimize take rates. Prove the flywheel.</p></div>
+                <div class="blas-phase"><div class="phase-letter">S</div><h4>SCALE</h4><div class="phase-weeks">WEEKS 21&#8211;30</div><p>Package for acquisition. List on Acquire.com, Flippa, Microns.io. Exit at 2.5&#8211;4x revenue multiples.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS BAR -->
+    <div class="metrics-bar">
+        <div class="container">
+            <div class="metrics-grid">
+                <div><div class="big-number"><span class="num">$753</span><span class="unit">B</span></div><div class="metric-desc">Global app market by 2033</div></div>
+                <div><div class="big-number"><span class="num">50</span><span class="unit">x</span></div><div class="metric-desc">Lower build cost vs. industry</div></div>
+                <div><div class="big-number"><span class="num">30</span><span class="unit">wk</span></div><div class="metric-desc">Build-to-exit cycle per app</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOUNDER (Dark) -->
+    <section class="section-dark" id="founder">
+        <div class="container" style="text-align: center; max-width: 720px;">
+            <span class="section-label">Founder</span>
+            <h2 class="section-title" style="margin-bottom: 24px;">20+ Years of Global<br><span class="gradient-text-gold">Executive Leadership</span></h2>
+            <p style="font-size: 1.05rem; color: var(--text-light-secondary); margin-bottom: 32px; line-height: 1.8;">A transformation partner with two decades across technology, financial services, and operations. Now channeling that experience into the first venture studio designed from day one for capital-efficient exits.</p>
+            <p style="font-size: 0.95rem; color: var(--text-light-muted); font-style: italic; margin-bottom: 40px;">"Breaking Limits Achieves Success"</p>
+            <p style="font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--text-light-muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;">Blas Ramos &middot; Founder &amp; CEO</p>
+            <a href="https://blasramos.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600; color: var(--neon-orange); transition: all 0.3s; border-bottom: 1px solid rgba(249,115,22,0.3); padding-bottom: 2px;">blasramos.com &#8599;</a>
+        </div>
+    </section>
+
+    <!-- VALUES (Alt Dark) -->
+    <section class="section-alt" style="padding: 80px 0;">
+        <div class="container">
+            <span class="section-label" style="display: block; text-align: center;">Core Values</span>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 48px;"><span class="gradient-text">G.R.E.A.T.</span></h2>
+            <div class="values-grid">
+                <div class="value-card"><div class="value-letter">G</div><h4>Grace-Centered Giving</h4><p>Leading with generosity and purpose</p></div>
+                <div class="value-card"><div class="value-letter">R</div><h4>Resolute Resilience</h4><p>Unwavering through uncertainty</p></div>
+                <div class="value-card"><div class="value-letter">E</div><h4>Extraordinary Excellence</h4><p>Every product commands premium multiples</p></div>
+                <div class="value-card"><div class="value-letter">A</div><h4>Authentic Action</h4><p>Results-driven execution, not theory</p></div>
+                <div class="value-card"><div class="value-letter">T</div><h4>Transformational Impact</h4><p>Proving the venture studio model</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACQUIRERS (Dark) -->
+    <section class="section-dark" id="acquirers">
+        <div class="container">
+            <span class="section-label">For Acquirers</span>
+            <h2 class="section-title">Why Buy <span class="gradient-text-gold">From Us</span></h2>
+            <p class="section-subtitle">Every app is packaged for acquisition from day one. Clean code, documented architecture, proven revenue.</p>
+            <div class="acquirer-cards">
+                <div class="acq-card"><div class="acq-icon">&#128202;</div><h4>Verified Revenue</h4><p>Real transactions, real users, real P&amp;L. Every metric is verifiable and defensible.</p></div>
+                <div class="acq-card"><div class="acq-icon">&#127959;&#65039;</div><h4>Clean Codebase</h4><p>Fully documented architecture and technical playbook. Transfer-ready from day one.</p></div>
+                <div class="acq-card"><div class="acq-icon">&#128200;</div><h4>Growth Narrative</h4><p>Clear growth trajectory with documented acquisition strategy and retention metrics.</p></div>
+                <div class="acq-card"><div class="acq-icon">&#9889;</div><h4>Capital Efficient</h4><p>Built for ~$3K per app vs. industry $50K&#8211;$500K. Higher margins, faster ROI.</p></div>
+                <div class="acq-card"><div class="acq-icon">&#128260;</div><h4>Transaction Revenue</h4><p>All apps are transaction-based &#8212; the model that commands highest acquisition multiples.</p></div>
+                <div class="acq-card"><div class="acq-icon">&#129309;</div><h4>Smooth Transition</h4><p>Full handover support. Analytics, documentation, growth playbook, and advisory included.</p></div>
+            </div>
+            <div class="marketplace-logos">
+                <span>Acquire.com</span><span>Flippa</span><span>Microns.io</span><span>Empire Flippers</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSITION: Dark → Light -->
+    <div class="transition-to-light"></div>
+
+    <!-- CONTACT (Light — logo shows well here too) -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <span class="section-label">Contact</span>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's <span class="gradient-text">Talk</span></h3>
+                    <p>Whether you're looking to acquire a digital asset, explore partnership opportunities, or learn more about our model &#8212; we're ready.</p>
+                    <a href="mailto:care@tavaraholdings.com" class="contact-link"><span class="icon">&#9993;&#65039;</span> care@tavaraholdings.com</a>
+                    <a href="https://solomonteknika.com" class="contact-link"><span class="icon">&#127760;</span> solomonteknika.com</a>
+                    <a href="https://tavaraholdings.com" class="contact-link"><span class="icon">&#127970;</span> tavaraholdings.com</a>
+                    <div style="margin-top: 32px;"><a href="#contact" class="btn-primary">Book a Meeting &#8594;</a></div>
+                </div>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Company (optional)">
+                    <select><option value="">I'm interested in...</option><option>Acquiring an app</option><option>Partnership</option><option>Investment</option><option>Other</option></select>
+                    <textarea rows="4" placeholder="Your message..." required></textarea>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Message &#8594;</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Dark) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="Visuals/Copilot_20260311_113817 Logo only.png" alt="SOLOMON TEKNIKA">
+                    <div class="footer-brand-text">
+                        <div class="name">SOLOMON <span>TEKNIKA</span></div>
+                        <div class="sub">INNOVATIONS | TECHNOLOGIES | SOLUTIONS</div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#portfolio">Portfolio</a><a href="#model">The Model</a><a href="#founder">Founder</a><a href="#acquirers">For Acquirers</a><a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                &copy; 2026 SOLOMON TEKNIKA / TAVARA Holdings. All rights reserved.<br>
+                All content, trademarks, logos, brand names, frameworks, and intellectual property are the exclusive property of TAVARA Holdings and its subsidiaries.<br>
+                Unauthorized use, reproduction, or distribution may result in legal action.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll animations
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.animate').forEach(el => obs.observe(el));
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const t = document.querySelector(a.getAttribute('href'));
+                    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelector('.nav-links')?.classList.remove('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
