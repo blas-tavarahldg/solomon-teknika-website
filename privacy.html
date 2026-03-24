@@ -1,0 +1,83 @@
+<!-- Copyright (c) 2026 TAVARA Holdings / Solomon Teknika. All rights reserved. -->
+<!-- Proprietary and confidential. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — SOLOMON TEKNIKA</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FAFBFC; color: #1B2A4A; line-height: 1.8; }
+        .container { max-width: 780px; margin: 0 auto; padding: 60px 24px 80px; }
+        h1 { font-family: 'Jost', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
+        .updated { font-size: 0.85rem; color: #6B7280; margin-bottom: 40px; }
+        h2 { font-family: 'Jost', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 12px; color: #1B2A4A; }
+        p { margin-bottom: 16px; color: #374151; }
+        a { color: #8B5CF6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-block; margin-bottom: 32px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">&larr; Back to SOLOMON TEKNIKA</a>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: March 11, 2026</p>
+
+        <h2>Who We Are</h2>
+        <p>SOLOMON TEKNIKA is a venture studio operated under TAVARA Holdings. This policy explains how we handle information collected through solomonteknika.com ("the Site").</p>
+
+        <h2>Information We Collect</h2>
+        <p>When you use our contact form, we collect: your name, email address, company name (optional), area of interest, and message content. We also collect non-personal metadata for fraud prevention purposes, including time spent on page and interaction patterns. We do not use cookies for tracking. No third-party analytics or advertising trackers are installed on this site.</p>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the information you provide solely to respond to your inquiry, evaluate potential business relationships, and protect against spam and fraudulent submissions. We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+        <h2>Form Submission Processing</h2>
+        <p>Contact form submissions are processed through Web3Forms, a third-party form handling service. Your submission data is transmitted securely via HTTPS and delivered to our business email. Web3Forms does not store your data beyond the delivery process. For their privacy practices, visit web3forms.com.</p>
+
+        <h2>Security Measures</h2>
+        <p>We implement industry-standard security measures including HTTPS encryption, Content Security Policy headers, XSS protection, clickjacking prevention, input sanitization, rate limiting, and automated fraud detection. While no system is 100% secure, we take reasonable steps to protect your data.</p>
+
+        <h2>Data Retention</h2>
+        <p>We retain contact form submissions for as long as necessary to fulfill the purpose of your inquiry or as required by law. You may request deletion of your data at any time by contacting us.</p>
+
+        <h2>Your Rights</h2>
+        <p>You have the right to request access to, correction of, or deletion of your personal data. To exercise these rights, email us at care@tavaraholdings.com.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+
+        <h2>Contact</h2>
+        <p>For privacy-related inquiries, contact us at care@tavaraholdings.com.</p>
+    </div>
+    <script>
+    // Lightweight analytics pageview tracker (shares IndexedDB with main site)
+    (function() {
+        const DB_NAME = 'st_analytics';
+        const req = indexedDB.open(DB_NAME, 1);
+        req.onsuccess = () => {
+            const db = req.result;
+            if (db.objectStoreNames.contains('pageviews')) {
+                const tx = db.transaction('pageviews', 'readwrite');
+                tx.objectStore('pageviews').add({
+                    path: '/privacy.html',
+                    referrer: document.referrer ? 'internal' : 'direct',
+                    device: window.innerWidth < 768 ? 'mobile' : window.innerWidth < 1024 ? 'tablet' : 'desktop',
+                    viewport: window.innerWidth + 'x' + window.innerHeight,
+                    lang: navigator.language,
+                    sessionId: sessionStorage.getItem('st_sid') || (Date.now().toString(36) + Math.random().toString(36).slice(2, 8)),
+                    utm: { source: 'direct', medium: 'none', campaign: 'none' },
+                    timestamp: Date.now()
+                });
+            }
+        };
+    })();
+    </script>
+</body>
+</html>

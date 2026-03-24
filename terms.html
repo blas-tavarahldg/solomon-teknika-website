@@ -1,0 +1,83 @@
+<!-- Copyright (c) 2026 TAVARA Holdings / Solomon Teknika. All rights reserved. -->
+<!-- Proprietary and confidential. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use — SOLOMON TEKNIKA</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FAFBFC; color: #1B2A4A; line-height: 1.8; }
+        .container { max-width: 780px; margin: 0 auto; padding: 60px 24px 80px; }
+        h1 { font-family: 'Jost', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
+        .updated { font-size: 0.85rem; color: #6B7280; margin-bottom: 40px; }
+        h2 { font-family: 'Jost', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 12px; color: #1B2A4A; }
+        p { margin-bottom: 16px; color: #374151; }
+        a { color: #8B5CF6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-block; margin-bottom: 32px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">&larr; Back to SOLOMON TEKNIKA</a>
+        <h1>Terms of Use</h1>
+        <p class="updated">Last updated: March 11, 2026</p>
+
+        <h2>Acceptance of Terms</h2>
+        <p>By accessing and using solomonteknika.com ("the Site"), operated by TAVARA Holdings, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Site.</p>
+
+        <h2>Intellectual Property</h2>
+        <p>All content, trademarks, logos, brand names, frameworks (including the BLAS X Framework), and intellectual property displayed on this Site are the exclusive property of TAVARA Holdings and its subsidiaries. Unauthorized use, reproduction, or distribution of any materials from this Site is strictly prohibited and may result in legal action.</p>
+
+        <h2>Use of the Site</h2>
+        <p>You agree to use this Site for lawful purposes only. You may not use the Site to transmit spam, malware, or any harmful content. You may not attempt to gain unauthorized access to any part of the Site, its servers, or connected systems. You may not use automated tools to scrape, crawl, or extract content from the Site without prior written consent.</p>
+
+        <h2>Contact Form</h2>
+        <p>By submitting the contact form, you represent that the information you provide is accurate and that your inquiry is made in good faith. We reserve the right to discard submissions that appear to be spam, fraudulent, or made by automated systems.</p>
+
+        <h2>Disclaimer</h2>
+        <p>The information on this Site is provided for general informational purposes. While we strive for accuracy, we make no warranties regarding completeness, reliability, or suitability of the information. Financial projections, metrics, and business data presented are forward-looking and subject to change.</p>
+
+        <h2>Limitation of Liability</h2>
+        <p>TAVARA Holdings shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of, or inability to use, the Site or any information provided herein.</p>
+
+        <h2>Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with applicable laws. Any disputes shall be resolved through appropriate legal channels.</p>
+
+        <h2>Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. Changes will be effective upon posting to this page. Continued use of the Site constitutes acceptance of modified terms.</p>
+
+        <h2>Contact</h2>
+        <p>For questions about these Terms, contact us at care@tavaraholdings.com.</p>
+    </div>
+    <script>
+    // Lightweight analytics pageview tracker (shares IndexedDB with main site)
+    (function() {
+        const DB_NAME = 'st_analytics';
+        const req = indexedDB.open(DB_NAME, 1);
+        req.onsuccess = () => {
+            const db = req.result;
+            if (db.objectStoreNames.contains('pageviews')) {
+                const tx = db.transaction('pageviews', 'readwrite');
+                tx.objectStore('pageviews').add({
+                    path: '/terms.html',
+                    referrer: document.referrer ? 'internal' : 'direct',
+                    device: window.innerWidth < 768 ? 'mobile' : window.innerWidth < 1024 ? 'tablet' : 'desktop',
+                    viewport: window.innerWidth + 'x' + window.innerHeight,
+                    lang: navigator.language,
+                    sessionId: sessionStorage.getItem('st_sid') || (Date.now().toString(36) + Math.random().toString(36).slice(2, 8)),
+                    utm: { source: 'direct', medium: 'none', campaign: 'none' },
+                    timestamp: Date.now()
+                });
+            }
+        };
+    })();
+    </script>
+</body>
+</html>
