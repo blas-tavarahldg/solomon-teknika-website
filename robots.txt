@@ -6,8 +6,4 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-# Sitemap location
 Sitemap: https://solomonteknika.com/sitemap.xml
-
-# Crawl-delay (optional, respected by some bots)
-Crawl-delay: 1
