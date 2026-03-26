@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://solomonteknika.com/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://solomonteknika.com/og-cover.png</image:loc>
+      <image:title>SOLOMON TEKNIKA Venture Studio</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog: Venture Studio Model -->
+  <url>
+    <loc>https://solomonteknika.com/blog/why-venture-studios-outperform.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: App Marketplace Exits -->
+  <url>
+    <loc>https://solomonteknika.com/blog/marketplace-app-exit-strategies.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: Rapid MVP Development -->
+  <url>
+    <loc>https://solomonteknika.com/blog/zero-to-market-14-days.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: Digital Marketplace Philippines -->
+  <url>
+    <loc>https://solomonteknika.com/blog/digital-marketplace-philippines.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: Venture Studio Model Explained -->
+  <url>
+    <loc>https://solomonteknika.com/blog/venture-studio-model-explained.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://solomonteknika.com/blog/</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal Pages (low priority, noindex but included for completeness) -->
+  <url>
+    <loc>https://solomonteknika.com/privacy.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://solomonteknika.com/terms.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+</urlset>

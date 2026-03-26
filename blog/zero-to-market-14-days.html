@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how SOLOMON TEKNIKA builds and launches marketplace apps in just 14 days using the proprietary BLAS X Framework. Discover our rapid MVP development methodology and how we achieve zero-to-market success.">
+    <meta name="keywords" content="rapid MVP development, build app in 14 days, fast app launch, lean startup methodology, marketplace app development, rapid prototyping, startup framework">
+    <meta name="author" content="Blas Ramos">
+    <meta name="publisher" content="SOLOMON TEKNIKA">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Zero to Market in 14 Days: How We Build and Launch Marketplace Apps at Record Speed">
+    <meta property="og:description" content="Discover the BLAS X Framework methodology that enables SOLOMON TEKNIKA to build and launch marketplace apps in 14 days with minimal investment.">
+    <meta property="og:url" content="https://solomonteknika.com/blog/zero-to-market-14-days">
+    <meta property="og:site_name" content="SOLOMON TEKNIKA">
+    <meta property="og:image" content="https://solomonteknika.com/og-image.jpg">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zero to Market in 14 Days: How We Build and Launch Marketplace Apps at Record Speed">
+    <meta name="twitter:description" content="Discover the BLAS X Framework methodology that enables SOLOMON TEKNIKA to build and launch marketplace apps in 14 days with minimal investment.">
+    <meta name="twitter:image" content="https://solomonteknika.com/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://solomonteknika.com/blog/zero-to-market-14-days">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Zero to Market in 14 Days: How We Build and Launch Marketplace Apps at Record Speed",
+        "description": "Learn how SOLOMON TEKNIKA builds and launches marketplace apps in just 14 days using the proprietary BLAS X Framework.",
+        "image": "https://solomonteknika.com/og-image.jpg",
+        "datePublished": "2026-03-25T00:00:00Z",
+        "dateModified": "2026-03-25T00:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Blas Ramos",
+            "title": "Chief Visionary Officer",
+            "organization": {
+                "@type": "Organization",
+                "name": "SOLOMON TEKNIKA",
+                "url": "https://solomonteknika.com",
+                "logo": "https://solomonteknika.com/logo.png"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SOLOMON TEKNIKA",
+            "url": "https://solomonteknika.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://solomonteknika.com/logo.png"
+            }
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "SOLOMON TEKNIKA",
+            "url": "https://solomonteknika.com"
+        },
+        "articleSection": "Business Strategy"
+    }
+    </script>
+
+    <title>Zero to Market in 14 Days: Marketplace App Launch Strategy | SOLOMON TEKNIKA</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #1B2A4A;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Jost', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: #F97316;
+        }
+
+        @media (max-width: 768px) {
+            nav .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            background: linear-gradient(135deg, #1B2A4A 0%, #2d3f5b 100%);
+            color: #fff;
+            padding: 4rem 20px;
+            text-align: center;
+        }
+
+        .blog-hero .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-hero h1 {
+            font-family: 'Jost', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .blog-hero .meta {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero .excerpt {
+            font-size: 1.1rem;
+            color: #f0f0f0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+            .blog-hero .excerpt {
+                font-size: 1rem;
+            }
+        }
+
+        /* Article Content */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .article-content h2 {
+            font-family: 'Jost', sans-serif;
+            font-size: 2rem;
+            color: #1B2A4A;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .article-content h3 {
+            font-family: 'Jost', sans-serif;
+            font-size: 1.5rem;
+            color: #1B2A4A;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            color: #1B2A4A;
+            font-weight: 600;
+        }
+
+        .article-content a {
+            color: #F97316;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: #F97316;
+        }
+
+        .framework-box {
+            background-color: #f9f5ff;
+            border-left: 4px solid #8B5CF6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .framework-box h4 {
+            color: #8B5CF6;
+            font-family: 'Jost', sans-serif;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1B2A4A 0%, #2d3f5b 100%);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-family: 'Jost', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #F97316;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .label {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight {
+            background-color: #fef3c7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 2px;
+        }
+
+        .accent-orange {
+            color: #F97316;
+            font-weight: 600;
+        }
+
+        .accent-purple {
+            color: #8B5CF6;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1B2A4A 0%, #2d3f5b 100%);
+            color: #fff;
+            padding: 3rem 20px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: #f0f0f0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F97316;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #F97316;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: #F97316;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1B2A4A;
+            color: #fff;
+            padding: 3rem 20px;
+            margin-top: 3rem;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Jost', sans-serif;
+            margin-bottom: 1rem;
+            color: #F97316;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-section a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #F97316;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #3a4a5a;
+            padding-top: 2rem;
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 2rem 15px;
+            }
+
+            .article-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="https://solomonteknika.com" class="logo">SOLOMON TEKNIKA</a>
+            <ul class="nav-links">
+                <li><a href="https://solomonteknika.com#model">Model</a></li>
+                <li><a href="https://solomonteknika.com#portfolio">Portfolio</a></li>
+                <li><a href="https://solomonteknika.com/blog">Blog</a></li>
+                <li><a href="https://solomonteknika.com#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Zero to Market in 14 Days: How We Build and Launch Marketplace Apps at Record Speed</h1>
+            <div class="meta">
+                <strong>By Blas Ramos</strong> | March 25, 2026 | 8 min read
+            </div>
+            <p class="excerpt">Discover the proprietary BLAS X Framework that enables SOLOMON TEKNIKA to build, validate, and launch marketplace applications in as little as 14 days—challenging the conventional wisdom that creating a viable app requires months of development and millions in funding.</p>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="article-container">
+        <div class="article-content">
+            <h2>The Speed Revolution in Startup Development</h2>
+
+            <p>For decades, the startup playbook was predictable: assemble a team of developers, secure significant venture funding, spend months building in secrecy, and hope for product-market fit. Today, we've shattered that model. At <strong>SOLOMON TEKNIKA</strong>, we've cracked the code on rapid marketplace application development—and we're doing it with a fraction of the investment most founders believe necessary.</p>
+
+            <p>Our track record speaks for itself: six marketplace applications across diverse verticals, each launched in 14-28 days with investments averaging around $5,000. This isn't luck or unsustainable hustle culture. It's a methodical, repeatable system built on the <span class="accent-purple">BLAS X Framework</span>—our proprietary approach to rapid MVP development that compresses the entire build-measure-learn cycle from months into days.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">14</div>
+                    <div class="label">Days to Market Launch</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">6</div>
+                    <div class="label">Successful Apps in Portfolio</div>
+                </div>
+            </div>
+
+            <h2>Understanding the BLAS X Framework</h2>
+
+            <p>The BLAS X Framework stands for <span class="accent-orange">Build, Lift, Accelerate, Scale + X-factor</span>. Each component represents a phase in our development lifecycle, and each is designed with ruthless efficiency in mind. Unlike traditional frameworks that optimize for perfection, BLAS X optimizes for validated learning—getting real market feedback as fast as possible.</p>
+
+            <div class="framework-box">
+                <h4>The Five Pillars of BLAS X</h4>
+                <ul>
+                    <li><strong>Build:</strong> Create a functional MVP with only the core features that solve the primary user problem. We ruthlessly cut everything else.</li>
+                    <li><strong>Lift:</strong> Get the initial product into users' hands through targeted early-adopter recruitment and minimal marketing spend.</li>
+                    <li><strong>Accelerate:</strong> Iterate rapidly based on real feedback, making data-driven improvements to retention, conversion, and user experience.</li>
+                    <li><strong>Scale:</strong> Optimize operations, infrastructure, and go-to-market strategy for sustainable growth.</li>
+                    <li><strong>X-factor:</strong> Identify and amplify the unique competitive advantage that sets this app apart from competitors.</li>
+                </ul>
+            </div>
+
+            <h2>Sprint-Based Development: The Secret Weapon</h2>
+
+            <p>Traditional software development divides work into lengthy sprints—often two to four weeks—with extensive planning, design documentation, and committee approvals. We operate differently. Our teams work in <strong>compressed 2-3 day sprints</strong> with clear deliverables, daily standups that last minutes (not hours), and a bias toward "done" over perfect.</p>
+
+            <p>This sprint-based approach works because:</p>
+
+            <ul>
+                <li><strong>Context remains fresh:</strong> Developers don't lose momentum switching between projects or getting buried in legacy decisions. They ship code that solves today's problems.</li>
+                <li><strong>Feedback loops tighten:</strong> Users interact with the product within days, not weeks or months. We learn what works and what doesn't in real-time.</li>
+                <li><strong>Scope stays disciplined:</strong> When you know you have 48-72 hours to deliver, you stop adding "nice-to-haves." You focus on the core value proposition.</li>
+                <li><strong>Team alignment is natural:</strong> Daily communication prevents misalignment before it becomes expensive. Everyone knows the sprint goal and the blockers standing in the way.</li>
+            </ul>
+
+            <p>The key is that these aren't just faster versions of traditional sprints—they're fundamentally different in philosophy. We plan just enough to move forward, build just enough to learn, and measure everything to inform the next sprint.</p>
+
+            <h2>Shared Infrastructure: Leverage Existing Assets</h2>
+
+            <p>One of the biggest advantages that SOLOMON TEKNIKA possesses—and one reason we can move so quickly—is our proprietary shared infrastructure. Rather than building authentication, payment processing, analytics, and admin dashboards from scratch for each app, we leverage a battle-tested platform foundation.</p>
+
+            <p>This shared infrastructure acts as a force multiplier. Our developers don't reinvent the wheel; they focus exclusively on the marketplace logic that makes each app unique. For founders launching solo or in small teams, this is the exact bottleneck that causes delays. You're not just building your app—you're building all the supporting systems simultaneously.</p>
+
+            <p>Our infrastructure includes:</p>
+
+            <ul>
+                <li>Pre-built authentication and authorization systems</li>
+                <li>Payment gateway integration and settlement logic</li>
+                <li>Real-time notification systems</li>
+                <li>User analytics and behavior tracking</li>
+                <li>Admin dashboards for operations and monitoring</li>
+                <li>Scalable database architecture</li>
+                <li>API frameworks and documentation tools</li>
+            </ul>
+
+            <p>By standing on the shoulders of these giants (our own previous apps), new projects can launch with these systems already solved. Our teams can move straight to marketplace-specific problems—matching algorithms, trust and safety features, commission structures, seller onboarding flows.</p>
+
+            <h2>The Build-Measure-Learn Cycle Compressed</h2>
+
+            <p>Lean startup methodology preaches the build-measure-learn cycle, but most organizations execute it in 6-12 week increments. We've compressed the same cycle into days—sometimes hours.</p>
+
+            <p><strong>Build (Day 1-2):</strong> We release a functional but minimal version of a specific feature. This isn't a prototype or mockup. It's real, live code that users can interact with and forms real data.</p>
+
+            <p><strong>Measure (Day 3-4):</strong> We monitor how users interact with the feature. Which flows do they use? Where do they drop off? What errors occur? We gather quantitative data through our analytics systems and qualitative feedback through direct user conversations.</p>
+
+            <p><strong>Learn (Day 5):</strong> We synthesize findings and make a decision: pivot, persevere, or double down on this direction. The decision feeds directly into the next sprint planning session.</p>
+
+            <p>This cycle repeats 4-5 times during the 14-day launch window. By launch day, the product has been validated by real users, iterated based on real feedback, and optimized for the metrics that matter most.</p>
+
+            <h2>The Economics of Speed: Why $5K Works</h2>
+
+            <p>Most venture capital conversations assume that building an app costs $100K-$500K and takes 6+ months. Our model inverts this equation. How do we do it for roughly $5K per application?</p>
+
+            <ul>
+                <li><strong>Shared infrastructure reduces development cost:</strong> We're not building authentication or payment processing. That's already paid for by our portfolio of apps.</li>
+                <li><strong>Disciplined scope control:</strong> Every feature is questioned. "Is this essential for product-market fit?" If not, it's cut. This ruthlessness saves weeks of development.</li>
+                <li><strong>Smaller founding teams:</strong> Instead of hiring 5-10 full-time developers, our core app teams are 2-3 people. Coordination costs drop dramatically.</li>
+                <li><strong>Founder involvement:</strong> The TAVARA Holdings ecosystem (our parent company) provides strategic guidance and operational support. The founding team doesn't need to rebuild what others have already learned.</li>
+                <li><strong>Speed reduces operational cost:</strong> Less time in development means lower burn rate, even if hourly costs are the same.</li>
+            </ul>
+
+            <p>The $5K investment covers third-party services (hosting, domain, specialized APIs), initial marketing to acquire early adopters, and contingency reserves. The team's sweat equity and SOLOMON TEKNIKA's infrastructure provide the rest of the value.</p>
+
+            <h2>How to Apply These Principles to Your Startup</h2>
+
+            <p>You might be thinking: "This is great for SOLOMON TEKNIKA, but my situation is different." You're right. But the underlying principles of the BLAS X Framework apply regardless of your context.</p>
+
+            <h3>1. Define Your MVP Ruthlessly</h3>
+            <p>What is the smallest feature set that solves your user's primary problem? Write it down. Now cut it in half. That's your MVP. Everything else is optimization.</p>
+
+            <h3>2. Establish Sprint Discipline</h3>
+            <p>Pick a sprint length (2-3 weeks for most teams), define clear deliverables, and ship something real at the end. No planning for two sprints out. No perfectionism. Done beats perfect.</p>
+
+            <h3>3. Build Infrastructure Once, Reuse Forever</h3>
+            <p>If you're launching multiple products or features, invest upfront in shared systems. Authentication, payments, analytics—these don't need to be rebuilt. Your advantage comes from domain-specific logic.</p>
+
+            <h3>4. Tighten Your Feedback Loop</h3>
+            <p>Users should interact with your product within days, not months. Set up analytics, crash reporting, and user feedback channels immediately. Talk to users daily. Their input should directly shape your next sprint.</p>
+
+            <h3>5. Embrace "Good Enough" Early</h3>
+            <p>Launch before you're ready. The market will tell you what actually matters. Perfecting features nobody wants is expensive and demoralizing.</p>
+
+            <h2>The Human Element: Why This Culture Works</h2>
+
+            <p>The BLAS X Framework is methodical, but its success ultimately hinges on the people executing it. At SOLOMON TEKNIKA, we're guided by our core values: <span class="accent-orange">G.R.E.A.T.</span></p>
+
+            <ul>
+                <li><strong>Grit:</strong> The determination to solve problems despite uncertainty and setbacks.</li>
+                <li><strong>Resourcefulness:</strong> The creativity to accomplish more with less—fewer developers, tighter budgets, faster timelines.</li>
+                <li><strong>Excellence:</strong> The commitment to producing high-quality products that users love, even under time pressure.</li>
+                <li><strong>Adaptability:</strong> The flexibility to pivot based on market feedback and adjust course mid-sprint.</li>
+                <li><strong>Tenacity:</strong> The persistence to see ideas through launch and beyond, learning from every iteration.</li>
+            </ul>
+
+            <p>These values aren't just aspirational. They shape how we hire, how we prioritize, and how we celebrate wins. A team without grit will crack under the pressure of a 14-day launch. A team without resourcefulness will spend budget on nice-to-haves instead of essentials. Without these values, the BLAS X Framework is just methodology—a hollow process. With them, it becomes a competitive advantage.</p>
+
+            <h2>What's Next: The Future of Rapid App Development</h2>
+
+            <p>The playbook for building apps is changing. Generative AI, no-code platforms, open-source libraries, and cloud infrastructure have fundamentally lowered the barrier to entry. The constraint is no longer technical—it's strategic clarity, execution discipline, and the courage to ship.</p>
+
+            <p>We believe the next generation of founders won't wait for perfect funding rounds or assembling dream teams. They'll validate their ideas in weeks, not years. They'll iterate based on real feedback from real users. They'll build their empires one app at a time, using shared resources and collaborative frameworks like BLAS X.</p>
+
+            <p>The era of the isolated, multi-million-dollar startup with a three-year runway is ending. The era of lean, focused, rapid-launch ventures is here. And for founders willing to embrace the methodology, the opportunities are unprecedented.</p>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build Your Next Marketplace?</h2>
+            <p>Whether you're a founder looking to validate an idea in weeks or a partner interested in leveraging the BLAS X Framework, we'd love to hear from you.</p>
+            <a href="https://solomonteknika.com#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SOLOMON TEKNIKA</h3>
+                    <p>A venture studio building, growing, and selling digital marketplace apps at record speed.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Part of TAVARA Holdings</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="https://solomonteknika.com#model">Our Model</a></li>
+                        <li><a href="https://solomonteknika.com#portfolio">Portfolio</a></li>
+                        <li><a href="https://solomonteknika.com/blog">Blog</a></li>
+                        <li><a href="https://solomonteknika.com#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Framework</h3>
+                    <ul>
+                        <li><strong>BLAS X Framework</strong></li>
+                        <li>Build, Lift, Accelerate,<br>Scale + X-factor</li>
+                        <li style="margin-top: 1rem;"><strong>Our Values</strong></li>
+                        <li>Grit, Resourcefulness,<br>Excellence, Adaptability,<br>Tenacity (G.R.E.A.T.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SOLOMON TEKNIKA. All rights reserved.</p>
+                <p>Building the future of digital marketplaces, one launch at a time.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

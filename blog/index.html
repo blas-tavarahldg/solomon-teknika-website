@@ -1,0 +1,266 @@
+<!--
+  Copyright (c) 2026 TAVARA Holdings / SOLOMON TEKNIKA
+  All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Blog — SOLOMON TEKNIKA</title>
+    <meta name="description" content="Insights on venture studios, marketplace app development, exit strategies, and rapid MVP building from the SOLOMON TEKNIKA team.">
+    <meta name="keywords" content="venture studio blog, marketplace app insights, startup studio, app exit strategies, rapid MVP development">
+    <link rel="canonical" href="https://solomonteknika.com/blog/">
+    <meta property="og:title" content="Insights & Blog — SOLOMON TEKNIKA">
+    <meta property="og:description" content="Insights on venture studios, marketplace apps, exit strategies, and rapid development from SOLOMON TEKNIKA.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solomonteknika.com/blog/">
+    <meta property="og:image" content="https://solomonteknika.com/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Insights & Blog — SOLOMON TEKNIKA">
+    <meta name="twitter:description" content="Insights on venture studios, marketplace apps, and rapid development.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "SOLOMON TEKNIKA Insights",
+      "description": "Insights on venture studios, marketplace app development, and exit strategies.",
+      "url": "https://solomonteknika.com/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SOLOMON TEKNIKA",
+        "url": "https://solomonteknika.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://solomonteknika.com/favicon-512.png"
+        }
+      }
+    }
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --navy: #1B2A4A;
+            --navy-deep: #0F1B33;
+            --orange: #F97316;
+            --purple: #8B5CF6;
+            --magenta: #EC4899;
+            --white: #FFFFFF;
+            --off-white: #FAFBFC;
+            --text-dark: #1B2A4A;
+            --text-secondary: #4B5563;
+            --text-muted: #9CA3AF;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            background: var(--off-white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(27,42,74,0.06);
+            padding: 16px 0;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Jost', sans-serif; font-weight: 800;
+            font-size: 1.1rem; color: var(--navy); text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--orange); }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a {
+            font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--orange); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+            color: white; padding: 80px 24px; text-align: center;
+        }
+        .hero-inner { max-width: 800px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-block; padding: 6px 16px; border-radius: 50px;
+            background: rgba(249,115,22,0.15); color: var(--orange);
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-family: 'Jost', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900; letter-spacing: -0.03em; line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1.1rem; color: rgba(255,255,255,0.7);
+            max-width: 600px; margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-grid-section { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
+        .blog-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 32px;
+        }
+        .blog-card {
+            background: white; border-radius: 16px;
+            border: 1px solid rgba(27,42,74,0.08);
+            overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none; color: inherit; display: flex; flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(27,42,74,0.1);
+        }
+        .card-color-bar { height: 6px; }
+        .card-body { padding: 28px 24px; flex: 1; display: flex; flex-direction: column; }
+        .card-tag {
+            display: inline-block; padding: 4px 10px; border-radius: 6px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+            text-transform: uppercase; margin-bottom: 12px; width: fit-content;
+        }
+        .tag-orange { background: rgba(249,115,22,0.1); color: var(--orange); }
+        .tag-purple { background: rgba(139,92,246,0.1); color: var(--purple); }
+        .tag-magenta { background: rgba(236,72,153,0.1); color: var(--magenta); }
+        .card-title {
+            font-family: 'Jost', sans-serif; font-size: 1.3rem; font-weight: 800;
+            color: var(--navy); line-height: 1.3; margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .card-excerpt {
+            font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;
+            flex: 1; margin-bottom: 16px;
+        }
+        .card-meta {
+            font-size: 0.78rem; color: var(--text-muted); font-weight: 500;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .card-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-muted); }
+        .read-more {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.85rem; font-weight: 700; color: var(--orange);
+            margin-top: 16px; text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy-deep); color: rgba(255,255,255,0.5);
+            padding: 40px 24px; text-align: center; font-size: 0.8rem;
+        }
+        .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+        .footer a:hover { color: var(--orange); }
+
+        @media (max-width: 640px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 12px; }
+            .nav-links a { font-size: 0.78rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">SOLOMON <span>TEKNIKA</span></a>
+            <div class="nav-links">
+                <a href="/#portfolio">Portfolio</a>
+                <a href="/#model">The Model</a>
+                <a href="/#acquirers">For Acquirers</a>
+                <a href="/#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">Insights</div>
+            <h1>The Studio Playbook</h1>
+            <p>Perspectives on venture building, marketplace dynamics, rapid development, and the art of engineering profitable exits.</p>
+        </div>
+    </section>
+
+    <section class="blog-grid-section">
+        <div class="blog-grid">
+
+            <a href="/blog/why-venture-studios-outperform.html" class="blog-card">
+                <div class="card-color-bar" style="background: linear-gradient(90deg, var(--orange), var(--magenta));"></div>
+                <div class="card-body">
+                    <div class="card-tag tag-orange">Venture Strategy</div>
+                    <h2 class="card-title">Why Venture Studios Outperform Traditional Incubators and Accelerators</h2>
+                    <p class="card-excerpt">The venture studio model is rewriting the startup playbook. Here's why studios consistently achieve higher success rates, faster timelines, and better returns than traditional support models.</p>
+                    <div class="card-meta">
+                        <span>Blas Ramos</span>
+                        <span class="dot"></span>
+                        <span>March 25, 2026</span>
+                        <span class="dot"></span>
+                        <span>8 min read</span>
+                    </div>
+                    <span class="read-more">Read Article &#8594;</span>
+                </div>
+            </a>
+
+            <a href="/blog/marketplace-app-exit-strategies.html" class="blog-card">
+                <div class="card-color-bar" style="background: linear-gradient(90deg, var(--purple), var(--orange));"></div>
+                <div class="card-body">
+                    <div class="card-tag tag-purple">Exit Strategy</div>
+                    <h2 class="card-title">How Digital Marketplace Apps Get Acquired: Exit Strategies and Valuation Multiples</h2>
+                    <p class="card-excerpt">Digital marketplaces are among the most attractive acquisition targets in tech. A deep dive into what drives valuations, who's buying, and how to position for maximum exit value.</p>
+                    <div class="card-meta">
+                        <span>Blas Ramos</span>
+                        <span class="dot"></span>
+                        <span>March 25, 2026</span>
+                        <span class="dot"></span>
+                        <span>9 min read</span>
+                    </div>
+                    <span class="read-more">Read Article &#8594;</span>
+                </div>
+            </a>
+
+            <a href="/blog/zero-to-market-14-days.html" class="blog-card">
+                <div class="card-color-bar" style="background: linear-gradient(90deg, var(--magenta), var(--purple));"></div>
+                <div class="card-body">
+                    <div class="card-tag tag-magenta">Development</div>
+                    <h2 class="card-title">Zero to Market in 14 Days: How We Build and Launch Marketplace Apps at Record Speed</h2>
+                    <p class="card-excerpt">Inside the BLAS X Framework methodology that lets us go from concept to live marketplace in as little as 14 days with roughly $5K investment per app.</p>
+                    <div class="card-meta">
+                        <span>Blas Ramos</span>
+                        <span class="dot"></span>
+                        <span>March 25, 2026</span>
+                        <span class="dot"></span>
+                        <span>7 min read</span>
+                    </div>
+                    <span class="read-more">Read Article &#8594;</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 SOLOMON TEKNIKA / TAVARA Holdings. All rights reserved.</p>
+        <p style="margin-top:8px;">
+            <a href="/">Home</a> &nbsp;&middot;&nbsp;
+            <a href="/privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+            <a href="/terms.html">Terms</a>
+        </p>
+    </footer>
+
+</body>
+</html>
