@@ -1,15 +1,15 @@
 <!--
-  Copyright (c) 2026 TAVARA Holdings / SOLOMON TEKNIKA
+  Copyright (c) 2026 TAVARA HOLDINGS / SOLOMON TEKNIKA
   All rights reserved.
 
   This document and its contents are the proprietary and confidential
-  property of TAVARA Holdings and SOLOMON TEKNIKA. Unauthorized copying,
+  property of TAVARA HOLDINGS and SOLOMON TEKNIKA. Unauthorized copying,
   distribution, modification, or use of this material, in whole or in
   part, is strictly prohibited without the express written permission
-  of TAVARA Holdings.
+  of TAVARA HOLDINGS.
   Any unauthorized use, reproduction, or distribution may result in legal action.
 
-  Owner: Blas Ramos, Founder & Chief Visionary Officer — TAVARA Holdings
+  Owner: Blas Ramos, Founder & Chief Visionary Officer — TAVARA HOLDINGS
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "SOLOMON TEKNIKA",
-      "alternateName": "Solomon Teknika Venture Studio",
+      "alternateName": "SOLOMON TEKNIKA Venture Studio",
       "url": "https://solomonteknika.com",
       "logo": "https://solomonteknika.com/favicon-512.png",
       "description": "SOLOMON TEKNIKA is a venture studio that builds, grows, and sells digital marketplace apps. 6 apps across diverse verticals. Zero to market in 14-28 days.",
@@ -55,7 +55,7 @@
       },
       "parentOrganization": {
         "@type": "Organization",
-        "name": "TAVARA Holdings",
+        "name": "TAVARA HOLDINGS",
         "url": "https://tavaraholdings.com"
       },
       "sameAs": [],
@@ -79,7 +79,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" id="fontStylesheet">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" as="image" href="/logo-full.webp" type="image/webp">
     <style>
@@ -322,7 +322,7 @@
 
         .section-label {
             display: inline-block; font-size: 0.72rem; font-weight: 700;
-            color: var(--electric-purple); letter-spacing: 0.18em; text-transform: uppercase;
+            color: #A78BFA; letter-spacing: 0.18em; text-transform: uppercase;
             margin-bottom: 16px; text-shadow: 0 0 20px rgba(139,92,246,0.3);
         }
         .section-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; margin-bottom: 16px; letter-spacing: -0.02em; }
@@ -364,7 +364,7 @@
         .app-card:hover .app-meta-item { border-color: rgba(139,92,246,0.3); color: var(--electric-purple); }
 
         /* BLAS X framework */
-        .blas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 64px; }
+        .blas-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; margin-top: 64px; }
         .blas-phase {
             background: var(--card-bg); padding: 40px 28px; position: relative;
             border-top: 3px solid rgba(255,255,255,0.03); transition: all 0.4s;
@@ -373,6 +373,7 @@
         .blas-phase:nth-child(2):hover { border-top-color: var(--gold); box-shadow: inset 0 3px 20px rgba(245,158,11,0.1); }
         .blas-phase:nth-child(3):hover { border-top-color: var(--vivid-magenta); box-shadow: inset 0 3px 20px rgba(236,72,153,0.1); }
         .blas-phase:nth-child(4):hover { border-top-color: var(--emerald); box-shadow: inset 0 3px 20px rgba(16,185,129,0.1); }
+        .blas-phase:nth-child(5):hover { border-top-color: var(--hot-red); box-shadow: inset 0 3px 20px rgba(239,68,68,0.1); }
         .phase-letter {
             font-family: 'Jost', sans-serif; font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 12px;
             color: rgba(255,255,255,0.04); transition: all 0.4s;
@@ -381,9 +382,11 @@
         .blas-phase:nth-child(2):hover .phase-letter { color: var(--gold); text-shadow: 0 0 30px rgba(245,158,11,0.3); }
         .blas-phase:nth-child(3):hover .phase-letter { color: var(--vivid-magenta); text-shadow: 0 0 30px rgba(236,72,153,0.3); }
         .blas-phase:nth-child(4):hover .phase-letter { color: var(--emerald); text-shadow: 0 0 30px rgba(16,185,129,0.3); }
+        .blas-phase:nth-child(5):hover .phase-letter { color: var(--hot-red); text-shadow: 0 0 30px rgba(239,68,68,0.3); }
         .blas-phase h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-        .phase-weeks { font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace; font-size: 0.72rem; color: var(--electric-purple); margin-bottom: 12px; letter-spacing: 0.05em; }
-        .blas-phase p { font-size: 0.85rem; color: var(--text-light-secondary); line-height: 1.7; }
+        .phase-weeks { font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace; font-size: 0.72rem; color: #A78BFA; margin-bottom: 12px; letter-spacing: 0.05em; }
+        .blas-phase p { font-size: 0.85rem; color: #C5CBD3; line-height: 1.7; }
+        @media (max-width: 1024px) { .blas-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 768px) { .blas-grid { grid-template-columns: 1fr; } }
 
         /* Metrics bar */
@@ -482,7 +485,7 @@
             padding: 100px 0; background: var(--white); color: var(--text-dark);
         }
         .contact-section h2, .contact-section h3 { color: var(--navy); }
-        .contact-section .section-label { text-shadow: none; }
+        .contact-section .section-label { text-shadow: none; color: #7C3AED; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .contact-info h3 { font-size: 2.2rem; margin-bottom: 16px; }
         .contact-info p { color: var(--text-dark-secondary); margin-bottom: 24px; }
@@ -525,7 +528,7 @@
 </head>
 <body>
 
-    <a href="#main-content" class="sr-only" style="position:absolute;top:-40px;left:0;background:#1B2A4A;color:#fff;padding:8px 16px;z-index:10000;transition:top 0.3s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+    <a href="#main-content" class="sr-only" id="skipLink" style="position:absolute;top:-40px;left:0;background:#1B2A4A;color:#fff;padding:8px 16px;z-index:10000;transition:top 0.3s;">Skip to main content</a>
 
     <!-- NAVBAR (Light) -->
     <nav class="navbar" id="navbar" aria-label="Main navigation">
@@ -533,11 +536,11 @@
             <a href="#" class="nav-brand">
                 <picture>
                     <source srcset="logo-mark.webp" type="image/webp">
-                    <img src="logo-mark.png" alt="SOLOMON TEKNIKA" width="40" height="40" loading="eager" decoding="async">
+                    <img src="logo-mark.png" alt="" width="40" height="40" loading="eager" decoding="async">
                 </picture>
                 <div class="nav-brand-text">SOLOMON <span>TEKNIKA</span></div>
             </a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false'?'true':'false');document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
             <div class="nav-links">
                 <a href="#portfolio">Portfolio</a>
                 <a href="#model">The Model</a>
@@ -556,7 +559,7 @@
                 <div>
                     <div class="hero-badge"><span class="dot"></span> Venture Studio</div>
                     <h1>We Engineer the Future.<br><span class="gradient-text">One Digital Empire at a Time.</span></h1>
-                    <p>SOLOMON TEKNIKA builds, grows, and sells digital marketplace apps at unmatched speed. From zero to market in 14–28 days. Every app is inventory. Every exit is proof.</p>
+                    <p>SOLOMON TEKNIKA builds, grows, and sells digital marketplace apps as transferable assets. Engineered for clean handovers and acquisition-ready architecture. Every app is inventory. Every product is engineered to exit.</p>
                     <div class="hero-btns">
                         <a href="#portfolio" class="btn-primary">View Portfolio &#8594;</a>
                         <a href="#contact" class="btn-outline">Talk to Us</a>
@@ -571,8 +574,8 @@
             </div>
             <div class="hero-metrics">
                 <div class="metric"><div class="metric-value"><span class="accent">14–28</span> days</div><div class="metric-label">Zero to market</div></div>
-                <div class="metric"><div class="metric-value"><span class="accent">~$5K</span></div><div class="metric-label">Build cost per app</div></div>
-                <div class="metric"><div class="metric-value"><span class="accent">6</span> apps</div><div class="metric-label">In portfolio</div></div>
+                <div class="metric"><div class="metric-value"><span class="accent">&lt;60</span> days</div><div class="metric-label">Time to ship</div></div>
+                <div class="metric"><div class="metric-value"><span class="accent">6</span> apps</div><div class="metric-label">1 live, 5 in development</div></div>
                 <div class="metric"><div class="metric-value"><span class="accent">2.5&#8211;4x</span></div><div class="metric-label">Target exit multiple</div></div>
             </div>
         </div>
@@ -584,7 +587,7 @@
     <!-- PARENT BAR (Dark) -->
     <div class="parent-bar">
         <div class="container">
-            <p>A portfolio company of <strong>TAVARA Holdings</strong></p>
+            <p>A portfolio company of <strong>TAVARA HOLDINGS</strong></p>
             <p class="tagline">"Shaping Futures. Changing Lives. | Building from Nothing. Something Worth Leaving."</p>
         </div>
     </div>
@@ -659,6 +662,7 @@
                 <div class="blas-phase"><div class="phase-letter">L</div><h3>LIFT</h3><div class="phase-weeks">SPRINT 2</div><p>Get paying users. Supply-first strategy &#8212; onboard providers who bring their own clients. Target: 50 transactions.</p></div>
                 <div class="blas-phase"><div class="phase-letter">A</div><h3>ACCELERATE</h3><div class="phase-weeks">SPRINT 3</div><p>Hit $5K MRR sustained 2+ months. Retention over acquisition. Optimize take rates. Prove the flywheel.</p></div>
                 <div class="blas-phase"><div class="phase-letter">S</div><h3>SCALE</h3><div class="phase-weeks">SPRINT 4</div><p>Package for acquisition. List on Acquire.com, Flippa, Microns.io. Exit at 2.5&#8211;4x revenue multiples.</p></div>
+                <div class="blas-phase"><div class="phase-letter">X</div><h3>EXIT / MULTIPLY</h3><div class="phase-weeks">ENDGAME</div><p>Exit or Multiply: sell the venture, hold for cash flow, or build on top of it. Every app is inventory. Every exit is proof.</p></div>
             </div>
         </div>
     </section>
@@ -668,7 +672,7 @@
         <div class="container">
             <div class="metrics-grid">
                 <div><div class="big-number"><span class="num">$753</span><span class="unit">B</span></div><div class="metric-desc">Global app market by 2033</div></div>
-                <div><div class="big-number"><span class="num">50</span><span class="unit">x</span></div><div class="metric-desc">Lower build cost vs. industry</div></div>
+                <div><div class="big-number"><span class="num">14&#8211;28</span><span class="unit">days</span></div><div class="metric-desc">Zero to market per app</div></div>
                 <div><div class="big-number"><span class="num">1</span><span class="unit">cycle</span></div><div class="metric-desc">Sprint cycle from concept to exit</div></div>
             </div>
         </div>
@@ -679,7 +683,7 @@
         <div class="container" style="text-align: center; max-width: 720px;">
             <span class="section-label">Founder</span>
             <h2 class="section-title" style="margin-bottom: 24px;">20+ Years of Global<br><span class="gradient-text-gold">Executive Leadership</span></h2>
-            <p style="font-size: 1.05rem; color: var(--text-light-secondary); margin-bottom: 32px; line-height: 1.8;">A transformation leader with two decades across technology, financial services, and operations. Now leading a team of engineers, designers, and growth specialists building the first venture studio designed from day one for capital-efficient exits.</p>
+            <p style="font-size: 1.05rem; color: var(--text-light-secondary); margin-bottom: 32px; line-height: 1.8;">Two decades operating in technology, financial services, and operations. SOLOMON TEKNIKA is the discipline distilled — a venture studio building products to clean-handover, transferable, acquisition-ready standards.</p>
             <p style="font-size: 0.95rem; color: var(--text-light-secondary); font-style: italic; margin-bottom: 40px;">"Breaking Limits Achieves Success"</p>
             <p style="font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--text-light-secondary); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;">Blas Ramos &middot; Founder &amp; Chief Visionary Officer</p>
             <a href="https://blasramos.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600; color: var(--neon-orange); transition: all 0.3s; border-bottom: 1px solid rgba(249,115,22,0.3); padding-bottom: 2px;">blasramos.com &#8599;</a>
@@ -708,10 +712,10 @@
             <h2 class="section-title">Why Buy <span class="gradient-text-gold">From Us</span></h2>
             <p class="section-subtitle">Every app is packaged for acquisition from day one. Clean code, documented architecture, proven revenue.</p>
             <div class="acquirer-cards">
-                <div class="acq-card"><div class="acq-icon">&#128202;</div><h3>Verified Revenue</h3><p>Real transactions, real users, real P&amp;L. Every metric is verifiable and defensible.</p></div>
+                <div class="acq-card"><div class="acq-icon">&#128202;</div><h3>Verifiable on Day One</h3><p>Every product is built with full audit trails, transaction logs, and analytics from sprint one. When revenue exists, it&#39;s defensible from the first peso.</p></div>
                 <div class="acq-card"><div class="acq-icon">&#127959;&#65039;</div><h3>Clean Codebase</h3><p>Fully documented architecture and technical playbook. Transfer-ready from day one.</p></div>
                 <div class="acq-card"><div class="acq-icon">&#128200;</div><h3>Growth Narrative</h3><p>Clear growth trajectory with documented acquisition strategy and retention metrics.</p></div>
-                <div class="acq-card"><div class="acq-icon">&#9889;</div><h3>Capital Efficient</h3><p>Built for ~$5K per app vs. industry $50K&#8211;$500K. Higher margins, faster ROI.</p></div>
+                <div class="acq-card"><div class="acq-icon">&#9889;</div><h3>Capital Efficient</h3><p>Lean studio model. Engineered for high-margin economics at acquisition.</p></div>
                 <div class="acq-card"><div class="acq-icon">&#128260;</div><h3>Transaction Revenue</h3><p>All apps are transaction-based &#8212; the model that commands highest acquisition multiples.</p></div>
                 <div class="acq-card"><div class="acq-icon">&#129309;</div><h3>Smooth Transition</h3><p>Full handover support. Analytics, documentation, growth playbook, and advisory included.</p></div>
             </div>
@@ -768,7 +772,7 @@
                 <div class="footer-brand">
                     <picture>
                         <source srcset="logo-mark.webp" type="image/webp">
-                        <img src="logo-mark.png" alt="SOLOMON TEKNIKA" width="40" height="40" loading="lazy" decoding="async">
+                        <img src="logo-mark.png" alt="" width="40" height="40" loading="lazy" decoding="async">
                     </picture>
                     <div class="footer-brand-text">
                         <div class="name">SOLOMON <span>TEKNIKA</span></div>
@@ -780,16 +784,16 @@
                 </div>
             </div>
             <div style="text-align:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.04)">
-                <a href="https://tavaraholdings.com" target="_blank" rel="noopener" style="font-family:'Jost',sans-serif;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.75);letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:color 0.3s">A TAVARA Holdings Company</a>
+                <a href="https://tavaraholdings.com" target="_blank" rel="noopener" style="font-family:'Jost',sans-serif;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.75);letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:color 0.3s">A TAVARA HOLDINGS Company</a>
             </div>
             <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;font-size:0.78rem;letter-spacing:0.08em">
-                <a href="https://tavaraholdings.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.3s">TAVARA Holdings</a>
+                <a href="https://tavaraholdings.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.3s">TAVARA HOLDINGS</a>
                 <a href="https://optimapraxis.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.3s">OPTIMA PRAXIS</a>
                 <a href="https://blasramos.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.3s">BLAS RAMOS</a>
             </div>
             <div class="footer-legal">
-                &copy; 2026 SOLOMON TEKNIKA / TAVARA Holdings. All rights reserved.<br>
-                All content, trademarks, logos, brand names, frameworks, and intellectual property are the exclusive property of TAVARA Holdings and its subsidiaries.<br>
+                &copy; 2026 SOLOMON TEKNIKA &middot; A TAVARA HOLDINGS company &middot; Philippine corporation in formation. All rights reserved.<br>
+                All content, trademarks, logos, brand names, frameworks, and intellectual property are the exclusive property of TAVARA HOLDINGS and its subsidiaries.<br>
                 Unauthorized use, reproduction, or distribution may result in legal action.<br>
                 <span style="margin-top:12px; display:inline-block;">
                     <a href="/privacy.html" style="color:rgba(255,255,255,0.7); text-decoration:none; margin-right:20px;">Privacy Policy</a>
@@ -801,6 +805,71 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.7/purify.min.js" integrity="sha384-XQqX/4yiUGu+oyr87jvWzRuqBUK/adrY0DunhL+tID9m/9dwSpV8h9Fk/Sg6ifVQ" crossorigin="anonymous"></script>
     <script src="/main.js"></script>
+
+    <!-- NIKA AI Chat Assistant -->
+    <style>
+        .nika-fab{position:fixed;bottom:28px;right:28px;z-index:9999;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--neon-orange),var(--vivid-magenta));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(249,115,22,0.4);transition:all 0.3s;animation:nika-pulse 3s infinite}
+        .nika-fab:hover{transform:scale(1.08);box-shadow:0 6px 30px rgba(249,115,22,0.5)}
+        .nika-fab svg{width:28px;height:28px;fill:#fff;transition:transform 0.3s}
+        .nika-fab.open svg{transform:rotate(90deg)}
+        @keyframes nika-pulse{0%,100%{box-shadow:0 4px 20px rgba(249,115,22,0.4)}50%{box-shadow:0 4px 30px rgba(249,115,22,0.6),0 0 40px rgba(236,72,153,0.2)}}
+        .nika-window{position:fixed;bottom:100px;right:28px;z-index:9998;width:380px;max-height:540px;background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.15),0 0 0 1px rgba(0,0,0,0.04);display:flex;flex-direction:column;overflow:hidden;transform:translateY(20px) scale(0.95);opacity:0;pointer-events:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)}
+        .nika-window.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all}
+        .nika-header{background:linear-gradient(135deg,var(--navy),var(--navy-deep));padding:18px 20px;display:flex;align-items:center;gap:12px}
+        .nika-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--neon-orange),var(--vivid-magenta));display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:#fff;font-family:'Jost',sans-serif;letter-spacing:0.05em;flex-shrink:0}
+        .nika-header-info{flex:1}
+        .nika-header-name{font-family:'Jost',sans-serif;font-size:1rem;font-weight:700;color:#fff;letter-spacing:0.02em}
+        .nika-header-sub{font-size:0.7rem;color:rgba(255,255,255,0.6);margin-top:1px}
+        .nika-close{background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:1.2rem;padding:4px;transition:color 0.2s}
+        .nika-close:hover{color:#fff}
+        .nika-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;min-height:300px;max-height:360px}
+        .nika-msg{max-width:85%;padding:12px 16px;border-radius:16px;font-size:0.88rem;line-height:1.55;animation:nika-fadein 0.3s ease}
+        .nika-msg.bot{background:#F1F3F5;color:var(--text-dark);align-self:flex-start;border-bottom-left-radius:4px}
+        .nika-msg.user{background:linear-gradient(135deg,var(--neon-orange),var(--vivid-magenta));color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+        .nika-msg a{color:var(--neon-orange);text-decoration:underline;font-weight:600}
+        .nika-msg.user a{color:#fff}
+        .nika-typing{display:flex;gap:4px;padding:12px 16px;align-self:flex-start}
+        .nika-typing span{width:7px;height:7px;background:#9CA3AF;border-radius:50%;animation:nika-dot 1.4s infinite}
+        .nika-typing span:nth-child(2){animation-delay:0.2s}
+        .nika-typing span:nth-child(3){animation-delay:0.4s}
+        @keyframes nika-dot{0%,60%,100%{opacity:0.3;transform:scale(0.8)}30%{opacity:1;transform:scale(1.1)}}
+        @keyframes nika-fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+        .nika-suggestions{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px;align-self:flex-start}
+        .nika-sug{background:#fff;border:1px solid #E5E7EB;border-radius:20px;padding:6px 14px;font-size:0.78rem;color:var(--navy);cursor:pointer;transition:all 0.2s;font-family:'Plus Jakarta Sans',sans-serif}
+        .nika-sug:hover{background:var(--neon-orange);color:#fff;border-color:var(--neon-orange)}
+        .nika-input-area{display:flex;align-items:center;gap:8px;padding:12px 16px;border-top:1px solid #F1F3F5}
+        .nika-input{flex:1;border:1px solid #E5E7EB;border-radius:24px;padding:10px 16px;font-size:0.88rem;font-family:'Plus Jakarta Sans',sans-serif;outline:none;transition:border-color 0.2s;color:var(--text-dark)}
+        .nika-input:focus{border-color:var(--neon-orange)}
+        .nika-input::placeholder{color:#9CA3AF}
+        .nika-send{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--neon-orange),var(--vivid-magenta));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform 0.2s;flex-shrink:0}
+        .nika-send:hover{transform:scale(1.08)}
+        .nika-send svg{width:16px;height:16px;fill:#fff}
+        .nika-powered{text-align:center;font-size:0.62rem;color:#9CA3AF;padding:4px 0 8px;letter-spacing:0.04em}
+        @media(max-width:480px){.nika-window{right:0;left:0;bottom:0;width:100%;max-height:100vh;border-radius:20px 20px 0 0}.nika-fab{bottom:20px;right:20px}}
+    </style>
+
+    <button class="nika-fab" id="nikaFab" aria-label="Chat with NIKA">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+    </button>
+
+    <div class="nika-window" id="nikaWindow">
+        <div class="nika-header">
+            <div class="nika-avatar">N</div>
+            <div class="nika-header-info">
+                <div class="nika-header-name">NIKA</div>
+                <div class="nika-header-sub">SOLOMON TEKNIKA AI Assistant</div>
+            </div>
+            <button class="nika-close" id="nikaClose" aria-label="Close chat">&times;</button>
+        </div>
+        <div class="nika-messages" id="nikaMsgs"></div>
+        <div class="nika-input-area">
+            <input type="text" class="nika-input" id="nikaInput" placeholder="Ask NIKA anything..." maxlength="500" autocomplete="off">
+            <button class="nika-send" id="nikaSend" aria-label="Send message"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+        </div>
+        <div class="nika-powered">Powered by SOLOMON TEKNIKA</div>
+    </div>
+
+    <!-- NIKA chatbot JS moved to main.js -->
 
 </body>
 </html>

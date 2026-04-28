@@ -1,4 +1,25 @@
     document.addEventListener('DOMContentLoaded', () => {
+        // Font stylesheet loader (replaces inline onload)
+        const fontSheet = document.getElementById('fontStylesheet');
+        if(fontSheet){ fontSheet.addEventListener('load', function(){ this.media='all'; }); }
+
+        // Skip link focus/blur (replaces inline onfocus/onblur)
+        const skipLink = document.getElementById('skipLink');
+        if(skipLink){
+            skipLink.addEventListener('focus', function(){ this.style.top='0'; });
+            skipLink.addEventListener('blur', function(){ this.style.top='-40px'; });
+        }
+
+        // Mobile menu toggle (replaces inline onclick)
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        if(mobileMenuBtn){
+            mobileMenuBtn.addEventListener('click', function(){
+                const expanded = this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false';
+                this.setAttribute('aria-expanded', expanded);
+                document.querySelector('.nav-links').classList.toggle('open');
+            });
+        }
+
         // Scroll animations
         const obs = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
@@ -999,4 +1020,214 @@
             init();
             return { showDashboard, trackEvent, buildDashboard, getAll, flushBatch, logErrorToSupabase };
         })();
+    });
+
+    /* ===== NIKA — Built-in AI Chat (runs after DOM ready) ===== */
+    document.addEventListener('DOMContentLoaded', function() {
+    (function(){
+    const KB = [
+        {k:['solomon teknika','what is solomon','who is solomon','about solomon','about the company','what do you do','what does solomon','company'],
+         a:"Great question! SOLOMON TEKNIKA is a venture studio \u2014 we build digital marketplace apps really fast (like 14\u201328 days fast), grow them to revenue, and then either sell them or keep scaling. We target 2.5\u20134x returns on exit, with margins protected by a lean studio model. We\u2019re part of the <a href='https://tavaraholdings.com' target='_blank'>TAVARA HOLDINGS</a> family."},
+        {k:['tavara','parent company','holdings','tavara holdings','who owns'],
+         a:"TAVARA HOLDINGS is our parent company \u2014 and there\u2019s actually a beautiful story behind the name. It comes from the founder\u2019s own bloodline: <strong>Ta</strong>mayo, <strong>Va</strong>llejo, <strong>Ra</strong>mos. The wild part? The word already existed in other languages \u2014 it means \u2018goods and wealth\u2019 in Finnish, \u2018noble daring\u2019 in Marathi, and connects to \u2018truth and perfection\u2019 in Hebrew. Pretty meaningful for a company building something meant to last. Check it out at <a href='https://tavaraholdings.com' target='_blank'>tavaraholdings.com</a>."},
+        {k:['optima praxis','opxis','advisory','coaching','transformation advisory'],
+         a:"That\u2019s another venture under TAVARA HOLDINGS! OPTIMA PRAXIS is a premium transformation advisory \u2014 think executive coaching, leadership development, and organizational change. They use a proprietary framework called OPXIS and the IGNITE Assessment. If you\u2019re curious, check out <a href='https://optimapraxis.com' target='_blank'>optimapraxis.com</a>."},
+        {k:['blas','framework','model','how do you operate','blas x','methodology','sprint','process','build lift accelerate scale'],
+         a:"This is the heart of what we do! Our <strong>BLAS X Framework</strong> is a sprint-based cycle that takes an app from idea to exit:<br><br><strong>B</strong>uild \u2014 Ship a working MVP in Sprint 1<br><strong>L</strong>ift \u2014 Get your first paying users in Sprint 2<br><strong>A</strong>ccelerate \u2014 Hit $5K monthly revenue in Sprint 3<br><strong>S</strong>cale \u2014 Package it for buyers in Sprint 4<br><strong>X</strong> \u2014 Exit or Multiply \u2014 sell it, keep the cash flow, or build on top<br><br>No wasted motion. Data decides everything."},
+        {k:['build phase','sprint 1','mvp','build sprint'],
+         a:"Sprint 1 is all about speed and substance. We go from zero to a fully deployed product \u2014 and it has to process real transactions from day one. No prototypes, no demos. Real engineering at startup speed."},
+        {k:['lift phase','sprint 2','paying users','first customers'],
+         a:"Sprint 2 is where things get real \u2014 we need people paying. Our approach is supply-first: onboard providers who bring their own clients. The target? 50 real transactions. That\u2019s when you know the engine is turning."},
+        {k:['accelerate phase','sprint 3','mrr','traction'],
+         a:"Sprint 3 is about proving the flywheel. We\u2019re aiming for $5K MRR sustained over 2+ months. At this stage, retention matters more than acquisition \u2014 we\u2019re optimizing take rates and making sure the unit economics actually work."},
+        {k:['scale phase','sprint 4','acquisition','package'],
+         a:"Sprint 4 is when we package everything for acquisition. Clean documentation, verified metrics, growth narrative \u2014 then we list on platforms like Acquire.com, Flippa, and Microns.io. Target: 2.5\u20134x revenue multiples."},
+        {k:['exit','multiply','endgame','sell','x phase'],
+         a:"The X is the endgame \u2014 and it\u2019s not just \u201Csell.\u201D It\u2019s Exit <em>or</em> Multiply. We can sell the venture, hold it for cash flow, or build on top of it. That\u2019s what makes the model powerful \u2014 every app is inventory, and every exit is proof the system works."},
+        {k:['portfolio','apps','products','how many apps','inventory','ventures','what apps'],
+         a:"We\u2019ve got <strong>6 marketplace apps</strong> in the portfolio right now! Here\u2019s the lineup:<br><br>\u2022 <strong>SERBISUYO</strong> \u2014 Home services (this one\u2019s already LIVE!)<br>\u2022 <strong>PALO FORE</strong> \u2014 Golf lifestyle \u2014 our #1 exit priority<br>\u2022 <strong>PAMEALYA PLATE</strong> \u2014 Home-cooked meal subscriptions<br>\u2022 <strong>PALITADA</strong> \u2014 Construction & renovation<br>\u2022 <strong>ROLETA</strong> \u2014 Raffles & rewards<br>\u2022 <strong>UNIFIED LOCAL CARD</strong> \u2014 Coalition loyalty<br><br>Want to know more about any of them? Just ask!"},
+        {k:['serbisuyo','home service','plumbing','cleaning','aircon'],
+         a:"SERBISUYO is our flagship \u2014 and it\u2019s already live! It\u2019s a home services marketplace connecting homeowners with vetted providers across 64 services in 11 categories. What makes it unique? Hybrid pricing \u2014 both fixed price and competitive bidding. The market\u2019s massive too: $893B by 2032, and 73% of it is still undigitized. You can check it out at <a href='https://serbisuyo.com' target='_blank'>serbisuyo.com</a>."},
+        {k:['palo fore','golf','tee time','coach','garment'],
+         a:"Oh, PALO FORE is a fun one. It\u2019s the all-in-one golf lifestyle platform \u2014 course booking, coach marketplace, garment retail, and even club share trading. Think ClassPass but for golf. It\u2019s our #1 exit priority because niche premium in the golf space is incredible."},
+        {k:['pamealya','meal','food','home cook','lutong bahay','subscription meal'],
+         a:"PAMEALYA PLATE is close to our hearts \u2014 it\u2019s a subscription marketplace for home-cooked meals. Families subscribe to weekly meal plans from verified home cooks in their area. Real food, delivered fresh. Lutong bahay, on schedule. The recurring revenue model makes it especially attractive."},
+        {k:['palitada','construction','renovation','contractor','builder'],
+         a:"If you\u2019ve ever tried to find a trustworthy contractor, you know the pain. PALITADA solves that \u2014 it\u2019s a marketplace connecting homeowners with verified contractors for construction and renovation. From quoting to milestone payments, everything\u2019s transparent. Check it out at <a href='https://palitada.com' target='_blank'>palitada.com</a>."},
+        {k:['roleta','raffle','reward','spin','prize','swerte'],
+         a:"ROLETA taps into something deeply Filipino \u2014 the love of \u201Cswerte\u201D (luck)! It\u2019s a digital raffle and rewards marketplace where brands run ticket-based promotions and consumers win real prizes. Gamified engagement meets e-commerce. Super engaging model."},
+        {k:['unified local card','loyalty','coalition','reward card'],
+         a:"Imagine one loyalty card that works at every local business in your area. That\u2019s UNIFIED LOCAL CARD \u2014 a coalition loyalty platform with cross-merchant rewards. The network effects are what make it really powerful as it scales."},
+        {k:['tavara erp','erp','enterprise resource'],
+         a:"TAVARA ERP is another venture under the TAVARA HOLDINGS umbrella \u2014 it\u2019s a peso-priced ERP platform built specifically for Filipino MSMEs, with BIR tax compliance and inventory automation baked in. They\u2019re targeting 900K+ SMEs. Learn more at <a href='https://tavaraerp.com' target='_blank'>tavaraerp.com</a>."},
+        {k:['blue whale','monitoring','sre','observability','infrastructure'],
+         a:"BLUE WHALE is the infrastructure play \u2014 a licensable monitoring and SRE platform that gives engineering teams complete visibility across their stack. Think of it as \u201Csee everything, miss nothing.\u201D Built for the $65B observability market. More at <a href='https://bluewhaleops.com' target='_blank'>bluewhaleops.com</a>."},
+        {k:['komuni','hoa','community','subdivision','dues','proptech'],
+         a:"KOMUNI is the PropTech play \u2014 built for HOAs and residential communities. Dues collection, gate passes, facility booking, security management \u2014 basically everything a subdivision needs, digitized. Visit <a href='https://komuni.app' target='_blank'>komuni.app</a>."},
+        {k:['gridhopper','ev','charger','electric vehicle','lunara'],
+         a:"GRIDHOPPER is our clean energy bet \u2014 an EV charging station finder with community-verified data. It runs under LUNARA Tech Corp and is all about making the EV transition practical. Check it out at <a href='https://gridhopper.app' target='_blank'>gridhopper.app</a>."},
+        {k:['hanapdok','doctor','clinic','healthcare','hmo'],
+         a:"HanapDok makes finding the right doctor so much easier \u2014 search by specialty, HMO, distance, and ratings. It\u2019s a healthcare provider locator built for the Philippines. No teleconsult overhead, just the fastest path to the right care. More at <a href='https://hanapdok.com' target='_blank'>hanapdok.com</a>."},
+        {k:['talyer','mechanic','auto repair','car repair','automotive'],
+         a:"TALYER solves a real trust problem \u2014 how do you find a mechanic you can actually trust? It\u2019s an auto repair shop locator where you can search by specialty, vehicle brand, pricing, and verified credentials. Serving the \u20B1417B automotive maintenance market in the Philippines."},
+        {k:['founder','blas','ramos','who founded','ceo','chairman','leadership','who runs','who started'],
+         a:"The man behind it all is <strong>Blas Ramos</strong> \u2014 Founder & Chief Visionary Officer. He\u2019s got 20+ years of executive leadership at global companies like SimCorp, PCCW Solutions, Dairy Farm, and RingCentral, spanning APAC, North America, and EMEA. His big dream? Building the first Filipino-founded global holding company that lasts across generations. You can learn more about him at <a href='https://blasramos.com' target='_blank'>blasramos.com</a>."},
+        {k:['values','great','core values','what do you believe','principles'],
+         a:"Our values are everything to us \u2014 we call them <strong>G.R.E.A.T.</strong>:<br><br><strong>G</strong>race-Centered Giving \u2014 lead with generosity first<br><strong>R</strong>esolute Resilience \u2014 stay steady when things get hard<br><strong>E</strong>xtraordinary Excellence \u2014 every product should command premium value<br><strong>A</strong>uthentic Action \u2014 results, not just talk<br><strong>T</strong>ransformational Impact \u2014 actually change the game, don\u2019t just play it"},
+        {k:['tavara principles','tavara meaning','how you think','idea framework'],
+         a:"TAVARA HOLDINGS runs on four principle frameworks \u2014 and they\u2019re actually encoded in the names we chose:<br><br><strong>TAVARA</strong> \u2014 How We Think (think beyond, act with conviction, venture boldly)<br><strong>G.R.E.A.T.</strong> \u2014 What We Value (grace, resilience, excellence, authenticity, transformation)<br><strong>I.D.E.A.</strong> \u2014 How We Build (innovate, develop, execute, amplify)<br><strong>BLAS X</strong> \u2014 How We Operate (build, lift, accelerate, scale, exit/multiply)<br><br>Every decision traces back to these."},
+        {k:['acquire','buy','acquirer','investment','investor','purchase','interested in buying'],
+         a:"Love that you\u2019re interested! Every app we build is packaged for acquisition from day one. Here\u2019s what you\u2019d get:<br><br>\u2022 <strong>Transparent reporting</strong> \u2014 open metrics shared with serious acquirers under NDA<br>\u2022 <strong>Clean codebase</strong> \u2014 fully documented, transfer-ready<br>\u2022 <strong>Growth narrative</strong> \u2014 clear trajectory with a documented playbook<br>\u2022 <strong>Capital efficient</strong> \u2014 lean studio model, margins protected<br>\u2022 <strong>Smooth transition</strong> \u2014 full handover support included<br><br>Want to explore? <a href='#contact'>Let\u2019s talk</a> \u2014 no pressure, just a conversation."},
+        {k:['cost','how much','price','build cost','budget'],
+         a:"We build production-grade marketplace apps at internal cost using our BLAS X sprint methodology and shared studio infrastructure. The result: structurally lower build cost than typical agency or in-house spin-ups, which protects margins for any future acquirer. Detailed economics are shared under NDA with serious counterparties."},
+        {k:['timeline','how long','how fast','days','speed','14 days','28 days'],
+         a:"We move fast \u2014 <strong>14 to 28 days</strong> from zero to market. Every app goes through our BLAS X sprint cycle, and there\u2019s genuinely no wasted motion. Data decides everything, speed is in our DNA."},
+        {k:['exit multiple','revenue multiple','valuation','how much worth','roi'],
+         a:"We target <strong>2.5\u20134x revenue multiples</strong> on exits. Our apps get listed on platforms like Acquire.com, Flippa, Microns.io, and Empire Flippers. The transaction-based revenue model is key \u2014 it\u2019s what commands the highest premiums from buyers."},
+        {k:['market','tam','market size','opportunity'],
+         a:"The opportunity is massive. Our portfolio spans home services ($893B market by 2032), golf lifestyle, food delivery, construction, loyalty networks \u2014 and the global app market overall is heading toward $753B by 2033. We\u2019re positioned in the right verticals at the right time."},
+        {k:['contact','reach','email','talk','get in touch','phone','meeting','connect','book'],
+         a:"I\u2019d love to connect you with the team! You can:<br><br>\u2022 Fill out the <a href='#contact'>contact form</a> right below on this page<br>\u2022 Visit <a href='https://solomonteknika.com'>solomonteknika.com</a><br>\u2022 Or check out <a href='https://tavaraholdings.com' target='_blank'>tavaraholdings.com</a><br><br>Whether it\u2019s about acquiring, partnering, or just being curious \u2014 we\u2019re always happy to chat."},
+        {k:['partner','partnership','collaborate','work together','work with you'],
+         a:"We\u2019re always open to good partnerships! Whether you\u2019re a platform, agency, or strategic ally \u2014 if there\u2019s a way to create value together, we\u2019re all ears. <a href='#contact'>Drop us a message</a> and let\u2019s see what\u2019s possible."},
+        {k:['foundation','charity','social','damara','buhi','aralino','give back','csr'],
+         a:"This is something we\u2019re really proud of. TAVARA HOLDINGS supports three foundations:<br><br>\u2022 <strong>DAMARA</strong> \u2014 care and dignity for abandoned elderly Filipinos<br>\u2022 <strong>BUHI</strong> \u2014 free overnight shelter and transitional housing<br>\u2022 <strong>ARALINO</strong> \u2014 a self-sustaining scholarship chain where each graduate funds the next student<br><br>Building wealth is only meaningful if it changes lives too."},
+        {k:['tech','technology','stack','what tech','built with','code','engineering'],
+         a:"We\u2019re a full-stack engineering operation, and we take code quality seriously. Every app ships with clean, documented architecture that\u2019s transfer-ready from day one. Our BLAS X methodology means production-grade from Sprint 1 \u2014 because that\u2019s what makes exits clean and buyers confident."},
+        {k:['funding','self funded','investor','funded','capital','bootstrapped','money'],
+         a:"Here\u2019s something we\u2019re proud of \u2014 TAVARA HOLDINGS is <strong>100% founder-owned and self-funded</strong>. No outside investors, no debt, no compromises. Each venture funds the next one. That\u2019s the whole strategy, and it keeps us lean, independent, and focused on what actually matters."},
+        {k:['filipino','philippines','pinoy','ph','local','cebu','manila'],
+         a:"TAVARA HOLDINGS is <strong>proudly Filipino-founded</strong> with global ambition. The mission is bold: build the first Filipino-founded global holding company that endures across generations. We believe legacy isn\u2019t inherited \u2014 it\u2019s constructed, one venture at a time, with vision, discipline, and heart."},
+        {k:['future','plan','roadmap','long term','vision','next','phase'],
+         a:"We think in decades, not quarters. Here\u2019s the long game:<br><br>\u2022 <strong>Phase 1 (Now)</strong> \u2014 Six ventures launching simultaneously<br>\u2022 <strong>Phase 2 (Year 1\u20133)</strong> \u2014 Portfolio matures, institutional structure takes shape<br>\u2022 <strong>Phase 3 (Year 3\u20135)</strong> \u2014 Expand into PropTech, FinTech, FranchiseTech<br>\u2022 <strong>Phase 4 (Year 5\u201310)</strong> \u2014 Multi-sector global portfolio<br>\u2022 <strong>Phase 5 (Year 10+)</strong> \u2014 A permanent generational institution<br><br>We\u2019re just getting started."},
+        {k:['nika','who are you','your name','what are you','chatbot','ai','assistant'],
+         a:"Hey! I\u2019m <strong>NIKA</strong> \u2014 short for tek<strong>NIKA</strong>. I\u2019m the AI assistant here at SOLOMON TEKNIKA. Think of me as your friendly guide to everything about our ventures, the BLAS X framework, acquisition opportunities, and TAVARA HOLDINGS. Ask me anything \u2014 I\u2019m happy to help!"},
+        {k:['hire','job','career','work for','hiring','employment'],
+         a:"We\u2019re always on the lookout for talented engineers, designers, and growth-minded people who want to build something meaningful. If that sounds like you, <a href='#contact'>send us a message</a> and let us know what role excites you!"},
+        {k:['blog','news','article','content','updates'],
+         a:"We\u2019ve got a blog! Head over to our <a href='/blog/'>Blog section</a> for the latest articles, behind-the-scenes insights, and updates from the SOLOMON TEKNIKA team."},
+        {k:['hello','hi','hey','good morning','good afternoon','good evening','greetings','yo','sup'],
+         a:"Hey! Welcome! I\u2019m NIKA \u2014 your go-to guide for all things SOLOMON TEKNIKA. What are you curious about? I can walk you through our portfolio, explain how the BLAS X framework works, talk about acquisition opportunities, or really anything else."},
+        {k:['thanks','thank you','appreciate','helpful','great','awesome','cool'],
+         a:"Glad I could help! If anything else comes to mind, I\u2019m right here. And if you want to take the conversation further, our team would love to hear from you \u2014 <a href='#contact'>just say the word</a>."},
+        {k:['bye','goodbye','see you','later','ciao'],
+         a:"It was great chatting with you! Come back anytime \u2014 I\u2019ll be here. Have an awesome day!"},
+    ];
+
+    const SUGGESTIONS = ['What is SOLOMON TEKNIKA?','Show me the portfolio','How does BLAS X work?','Who is the founder?','I want to acquire an app'];
+    const FALLBACK = [
+        "Hmm, that\u2019s a good one! I don\u2019t have the perfect answer for that right now, but I bet our team does. Want to <a href='#contact'>reach out to them</a>?",
+        "Interesting question! That\u2019s a bit outside what I know, but our team would love to help. <a href='#contact'>Drop them a note here</a>.",
+        "I wish I had a great answer for that! Our human team definitely can help though \u2014 <a href='#contact'>let\u2019s connect you</a>.",
+        "Great question! I\u2019m still learning, so I might not have that one nailed yet. But our team is just a message away \u2014 <a href='#contact'>say hello here</a>."
+    ];
+
+    const fab = document.getElementById('nikaFab');
+    const win = document.getElementById('nikaWindow');
+    const msgs = document.getElementById('nikaMsgs');
+    const input = document.getElementById('nikaInput');
+    const sendBtn = document.getElementById('nikaSend');
+    const closeBtn = document.getElementById('nikaClose');
+    let isOpen = false, firstOpen = true;
+
+    function toggle(){
+        isOpen = !isOpen;
+        win.classList.toggle('open', isOpen);
+        fab.classList.toggle('open', isOpen);
+        if(isOpen && firstOpen){
+            firstOpen = false;
+            addBot("Hi! I\u2019m <strong>NIKA</strong>, SOLOMON TEKNIKA\u2019s AI assistant. Ask me anything about our ventures, the BLAS X framework, acquisition opportunities, or TAVARA HOLDINGS.");
+            showSuggestions(SUGGESTIONS);
+        }
+        if(isOpen) setTimeout(()=>input.focus(),350);
+    }
+    fab.addEventListener('click', toggle);
+    closeBtn.addEventListener('click', toggle);
+
+    function addBot(html){
+        const d = document.createElement('div');
+        d.className = 'nika-msg bot';
+        d.innerHTML = html;
+        msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+    }
+    function addUser(text){
+        const d = document.createElement('div');
+        d.className = 'nika-msg user';
+        d.textContent = text;
+        msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+    }
+    function showTyping(){
+        const d = document.createElement('div');
+        d.className = 'nika-typing';
+        d.id = 'nikaTyping';
+        d.innerHTML = '<span></span><span></span><span></span>';
+        msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+    }
+    function hideTyping(){
+        const t = document.getElementById('nikaTyping');
+        if(t) t.remove();
+    }
+    function showSuggestions(items){
+        const existing = msgs.querySelector('.nika-suggestions');
+        if(existing) existing.remove();
+        const wrap = document.createElement('div');
+        wrap.className = 'nika-suggestions';
+        items.forEach(s=>{
+            const btn = document.createElement('button');
+            btn.className = 'nika-sug';
+            btn.textContent = s;
+            btn.addEventListener('click',()=>{ wrap.remove(); sendMessage(s); });
+            wrap.appendChild(btn);
+        });
+        msgs.appendChild(wrap);
+        msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function findAnswer(q){
+        const lower = q.toLowerCase().replace(/[^a-z0-9\s]/g,'');
+        const words = lower.split(/\s+/);
+        let bestMatch = null, bestScore = 0;
+        for(const entry of KB){
+            let score = 0;
+            for(const keyword of entry.k){
+                const kw = keyword.toLowerCase();
+                if(lower.includes(kw)){
+                    score += kw.split(/\s+/).length * 3;
+                }else{
+                    for(const w of words){
+                        if(w.length > 2 && kw.includes(w)) score += 1;
+                    }
+                }
+            }
+            if(score > bestScore){ bestScore = score; bestMatch = entry; }
+        }
+        return bestScore >= 2 ? bestMatch.a : FALLBACK[Math.floor(Math.random()*FALLBACK.length)];
+    }
+
+    function sendMessage(text){
+        if(!text.trim()) return;
+        addUser(text);
+        input.value = '';
+        const sug = msgs.querySelector('.nika-suggestions');
+        if(sug) sug.remove();
+        showTyping();
+        const delay = 400 + Math.random()*800;
+        setTimeout(()=>{
+            hideTyping();
+            const answer = findAnswer(text);
+            addBot(answer);
+            if(Math.random() > 0.5){
+                const followUps = ['Tell me about the portfolio','How does BLAS X work?','Who is the founder?','How to acquire an app?','What are your values?'];
+                const filtered = followUps.sort(()=>0.5-Math.random()).slice(0,3);
+                showSuggestions(filtered);
+            }
+        }, delay);
+    }
+
+    sendBtn.addEventListener('click',()=>sendMessage(input.value));
+    input.addEventListener('keydown',e=>{ if(e.key==='Enter') sendMessage(input.value); });
+    })();
     });
