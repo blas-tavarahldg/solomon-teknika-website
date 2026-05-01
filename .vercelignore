@@ -1,0 +1,28 @@
+# Exclude Next.js scaffolding (in-progress work, not for static deploy)
+src/
+middleware/
+services/
+security-hardening-kit/
+next.config.js
+package.json
+package-lock.json
+node_modules/
+
+# Exclude internal docs / source-code working folders (untracked but defensive)
+00-SOLOMON-TEKNIKA-CATALOG.md
+01_Business_Plans/
+02_Marketing/
+03_Technical_Docs/
+04_QA_Reports/
+04_Website/
+05_Deployments/
+06_Visuals/
+07_Source_Code/
+TALYER-VENTURE-BRIEF.docx
+Visuals 2/
+demo-preview.html
+solomonteknika-revamp-preview-v1.html
+
+# Exclude README/docs that aren't part of the deployed site
+SECURITY-KIT-README.md
+DEPLOYMENT.md
